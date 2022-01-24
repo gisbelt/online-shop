@@ -1,0 +1,27 @@
+.default{
+    color: #fff !important;
+    font-family: Montserrat,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+/*TIENDA*/
+.centrar_vertical{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.centrado{ 
+    display: block !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+.fila_tienda{
+    height:10%; 
+    border-radius: 17px 17px 17px 17px;
+    -moz-border-radius: 17px 17px 17px 17px;
+    -webkit-border-radius: 17px 17px 17px 17px;
+    border: 1px solid #dbdbdb;
+    
+}
+.card{
+    border: 0px !important;
+}
