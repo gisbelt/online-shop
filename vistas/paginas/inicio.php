@@ -129,19 +129,19 @@ $sesion = session_id();
 
         <!-- Right -->
         <div>
-            <a href="" class="default me-4">
+            <a href="" class="text-decoration-none default me-4">
             <i class="bi bi-facebook"></i>
             </a>
-            <a href="" class="default me-4">
+            <a href="" class="text-decoration-none default me-4">
             <i class="bi bi-twitter"></i>
             </a>
-            <a href="" class="default me-4">
+            <a href="" class="text-decoration-none default me-4">
             <i class="bi bi-google"></i>
             </a>
-            <a href="" class="default me-4">
+            <a href="" class="text-decoration-none default me-4">
             <i class="bi bi-instagram"></i>
             </a>
-            <a href="" class="default me-4">
+            <a href="" class="text-decoration-none default me-4">
             <i class="bi bi-linkedin"></i>
             </a>
         </div>
@@ -179,9 +179,9 @@ $sesion = session_id();
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold">Redes Sociales</h6>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
-                    <p> <a href="#" class="bi bi-twitter" style="text-decoration: none;"> Twitter</a> </p>
-                    <p> <a href="#" class="bi bi-instagram" style="text-decoration: none;"> Instagram</a> </p>
-                    <p> <a href="#" class="bi bi-facebook" style="text-decoration: none;"> Facebook</a> </p>
+                    <p> <a href="#" class="" style="text-decoration: none;"><i class="bi bi-twitter"></i> Twitter</a> </p>
+                    <p> <a href="#" class="" style="text-decoration: none;"><i class="bi bi-instagram"></i> Instagram</a> </p>
+                    <p> <a href="#" class="" style="text-decoration: none;"><i class="bi bi-facebook"></i> Facebook</a> </p>
                 </div>
                 <!-- Grid column -->
 
@@ -190,8 +190,8 @@ $sesion = session_id();
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold">Contacto</h6>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
-                    <p><i class="fas fa-envelope mr-3"></i>contacto@casacarlina.com.ve</p>
-                    <p><i class="fas fa-phone mr-3"></i> +58 587 7489</p>
+                    <p><i class="bi bi-envelope"></i>contacto@casacarlina.com.ve</p>
+                    <p><i class="bi bi-telephone"></i> +58 587 7489</p>
                 </div>
                 <!-- Grid column -->
             </div>

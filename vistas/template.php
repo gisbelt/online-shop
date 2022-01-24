@@ -20,8 +20,8 @@ $conteo = count(carrito::obtener_id_articulos_carrito());
 
     <!-- Bootstrap CSS v5.0.2 -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="fonts/css/all.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="public/fonts/bootstrap-icons.css">
+    <link rel="stylesheet" href="public/css/style.css">
     <!-- <link rel="stylesheet" href="fonts/css/fontawesome.css"> -->
     <link rel="stylesheet" href="https://bootswatch.com/5/minty/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.min.css">    -->
@@ -34,7 +34,7 @@ $conteo = count(carrito::obtener_id_articulos_carrito());
         <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="nav-link" href="#_"><i class="fa fa-search mr-1"></i></a>
+        <a class="nav-link" href="#_"><i class="bi bi-search mr-1"></i></a>
         <?php if(isset($nombreCliente)){ ?>
         <span>Bienvenido <?php echo $nombreCliente; ?></span> 
         <?php } ?>
@@ -59,7 +59,7 @@ $conteo = count(carrito::obtener_id_articulos_carrito());
                     <strong style="color: rgb(226, 83, 83);">
                         <?php if ($conteo > 0) { printf("(%d)", $conteo); } ?>
                     </strong>
-                    <i class="fa fa-shopping-cart"  ></i>
+                    <i class="bi bi-cart2"  ></i>
                 </a> 
             </li>  
         </div>    
