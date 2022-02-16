@@ -34,7 +34,7 @@ $conteo = count(carrito::obtener_id_articulos_carrito());
         <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="nav-link" href="#_"><i class="bi bi-search mr-1"></i></a>
+        <a class="nav-link" href="#"><i class="bi bi-search mr-1"></i></a>
         <?php if(isset($nombreCliente)){ ?>
         <span>Bienvenido <?php echo $nombreCliente; ?></span> 
         <?php } ?>
@@ -59,7 +59,7 @@ $conteo = count(carrito::obtener_id_articulos_carrito());
                     <strong style="color: rgb(226, 83, 83);">
                         <?php if ($conteo > 0) { printf("(%d)", $conteo); } ?>
                     </strong>
-                    <i class="bi bi-cart2"  ></i>
+                    <i class="bi bi-cart2" style="color: #78c2ad"></i>
                 </a> 
             </li>  
         </div>    
