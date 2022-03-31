@@ -2,6 +2,9 @@
 // Interaccion con la base de datos 
 class carrito{
 
+    // Para que funcione la vista, quizas es necesario agregar toda las variables
+    // como parametros al constructor 
+
     public $id_articulos;
     public $id_sesion;
 
