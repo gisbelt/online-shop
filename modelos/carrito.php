@@ -8,12 +8,27 @@ class carrito{
     public $id_articulos;
     public $id_sesion;
 
+    public $nombre_articulo;
+    public $codigo_articulo;
+    public $descripcion;
+    public $precio_venta;
+    public $imagen;
+    public $categoria;
+    public $cantidad;
+    public $estado;
+    public $descuento;
+
    
     // Creamos un constructor que nos va a ayudar a recibir informacion 
     // Y que la consulta se cree a partir de objetos
     // Creará lista de objetos para poder leer la informacion 
-    public function  __construct($id_articulos,$id_sesion){
+    public function  __construct($id_articulos,$nombre_articulo,$descripcion,$precio_venta,$imagen,$categoria){
         $this->id_articulos=$id_articulos;
+        $this->nombre_articulo=$nombre_articulo;
+        $this->descripcion=$descripcion;
+        $this->precio_venta=$precio_venta;
+        $this->imagen=$imagen;
+        $this->categoria=$categoria;
         $this->id_sesion=$id_sesion;
     }
 
@@ -35,23 +50,19 @@ class carrito{
         return $sql->fetchAll(PDO::FETCH_COLUMN);
     }
 
+    // Ver detalles del carrito de compras
     public static function obtener_detalles_articulos_carrito(){
-        // Acomodar este desastre
         $id_sesion = $_SESSION['correoCliente'];
-
         $listaCarrito=[]; //Arreglo para almacenar todos los empleados que vamos a recuperar de la base de datos
         $conexionBD=BD::crearInstancia();
-        $sql=$conexionBD->query("SELECT articulos.id_articulos, articulos.nombre_articulo, articulos.descripcion, articulos.precio_venta FROM articulos INNER JOIN carrito ON carrito.id_articulos=articulos.id_articulos WHERE carrito.id_sesion='$id_sesion' ");
-        // $id_sesion = $_SESSION['correoCliente'];
-        // $sql->execute(array($id_sesion));
-        // recuperar la información para almacenarla en la lista 
-        // fetchAll va a tener todos los registros y lo vamos a recibir como si fuera uno 
+        $sql=$conexionBD->query("SELECT articulos.id_articulos, articulos.nombre_articulo, articulos.descripcion, articulos.precio_venta, articulos.imagen, articulos.categoria FROM articulos INNER JOIN carrito ON carrito.id_articulos=articulos.id_articulos WHERE carrito.id_sesion='$id_sesion' ");
         foreach($sql->fetchAll() as $carro){
-            $listaCarrito[]=new carrito($carro['id_articulos'],$carro['nombre_articulo'],$carro['descripcion'],$carro['precio_venta']);
+            $listaCarrito[]=new carrito($carro['id_articulos'],$carro['nombre_articulo'],$carro['descripcion'],$carro['precio_venta'],$carro['imagen'],$carro['categoria']);
         }
         return $listaCarrito;
     }
 
+    //quitar elementos del carrito
     public static function quitar_articulos_carrito($id_articulos){
         $conexionBD=BD::crearInstancia();
         // $id_sesion = session_id();

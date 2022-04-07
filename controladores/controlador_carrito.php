@@ -10,12 +10,12 @@ class controladorCarrito {
         // Ver detalles del carrito de compras
         $carrito=carrito::obtener_detalles_articulos_carrito();
         include_once("vistas/carrito/vercarrito.php");
+    }
 
-        if(isset($_POST['quitar_carrito'])){
-            $id_articulos=$_POST['id_articulos'];
-            carrito::quitar_articulos_carrito($id_articulos);
-        }
-
+    public function quitarcarrito(){
+        // Recibimos el id del articulo 
+        $id_articulos=$_REQUEST['id'];
+        carrito::quitar_articulos_carrito($id_articulos);
     }
 
     public function conteo_carrito(){

@@ -3,7 +3,7 @@
     font-family: Montserrat,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 
-/*TIENDA*/
+/*TIENDA Y CARRITO*/
 .centrar_vertical{
     display: flex;
     align-items: center;
@@ -15,7 +15,7 @@
     margin-left: auto;
 }
 .fila_tienda{
-    height:10%; 
+    /* height:10%;  */
     border-radius: 17px 17px 17px 17px;
     -moz-border-radius: 17px 17px 17px 17px;
     -webkit-border-radius: 17px 17px 17px 17px;
@@ -24,4 +24,9 @@
 }
 .card{
     border: 0px !important;
+}
+.derecha{
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
 }
