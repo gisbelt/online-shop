@@ -43,7 +43,7 @@
                     <td>
                         <form method="POST">
                             <input type="hidden" name="txtid" id="txtid" value="<?php // echo $libro['id']; ?>">
-                            <a href="?controlador=articulos&accion=editar&id=<?php echo $art->id_articulos;?>" data-bs-toggle="modal" data-bs-target="#ventana" name="seleccionar" id="seleccionar" class="btn btn-primary seleccionar" type="submit" value="">Seleccionar</a>
+                            <a href="?controlador=articulos&accion=editarArticulos&id_articulos=<?php echo $bus->id_articulos;?>" name="seleccionar" id="seleccionar" class="btn btn-primary seleccionar" value="">Seleccionar</a>
                             <input name="accion" id="" class="btn btn-danger" type="submit" value="Borrar" style="margin-top: 10px;">
                         </form>
                     </td>

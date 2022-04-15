@@ -19,18 +19,26 @@ class controladorPaginas{
 
         $carrito=carrito::obtener_detalles_articulos_carrito();
 
-        //Agregar al carrito
-        if($_POST) {
-            $id_articulos = $_POST["id_articulos"];
-            carrito::agregar_al_carrito($id_articulos);
-            header("location:?controlador=paginas&accion=inicio");
-            // error aqui 
-        }  
+        // //Agregar al carrito
+        // if($_POST) {
+        //     $id_articulos = $_POST["id_articulos"];
+        //     carrito::agregar_al_carrito($id_articulos);
+        //     header("location:?controlador=paginas&accion=inicio");
+        //     // error aqui 
+        // }  
         
         // $productoYaEstaEnCarrito=carrito::obtener_id_articulos_carrito();
         
 
         include_once("vistas/paginas/inicio.php");
+    }
+
+    public function agregar_al_carrito(){
+        //Agregar al carrito
+        $id_articulos=$_REQUEST['id'];
+        carrito::agregar_al_carrito($id_articulos);
+        // header("location:?controlador=paginas&accion=inicio");
+        // include_once("vistas/paginas/inicio.php");
     }
 
     public function conteo_carrito(){

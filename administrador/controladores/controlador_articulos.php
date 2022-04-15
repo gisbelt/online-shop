@@ -85,7 +85,6 @@ class controladorArticulos {
                 move_uploaded_file($tmpimagen,"./img/".$nombreArchivo);
                 
                 // Una vez insertada la nueva imagen, borramos la anterior
-                // $id_articulos=$_POST['eid_articulos'];
                 $conexionBD=BD::crearInstancia();
                 $sql= $conexionBD->prepare("SELECT imagen FROM articulos WHERE id_articulos=?");
                 $sql->execute(array($id_articulos));
@@ -100,7 +99,6 @@ class controladorArticulos {
                 $sentenciaSQL= $conexionBD->prepare("UPDATE articulos SET imagen=? WHERE id_articulos=?");
                 $sentenciaSQL->execute(array($nombreArchivo,$id_articulos)); 
             }
-            // header("Location:./?controlador=articulos&accion=editarArticulos");
             $mensaje1="Artículo editado exitosamente";
         }
        

@@ -36,7 +36,6 @@
                     <td><?php echo $art->estado; ?></td>
                     <td><?php echo $art->categoria; ?></td>
                     <td>
-                        <!-- <img class="img-thumbnail rounded" src="../../img/<?php // echo $libro['imagen']; ?>" width="100" alt="" srcset="">           -->
                         <img class="card-img-top" src="./img/<?php echo $art->imagen; ?>" alt="Card image cap">
                     </td>
 

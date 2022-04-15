@@ -7,7 +7,7 @@
         <hr class="my-2">
         <p class="lead">
             <a class="btn btn-primary btn-lg" href="?controlador=articulos&accion=crearArticulos" role="button">Agregar Artículos</a>
-            <a class="btn btn-info btn-lg" href="?controlador=articulos&accion=editar" role="button">Administrar Artículos</a>
+            <a class="btn btn-info btn-lg" href="?controlador=articulos&accion=consultarArticulos" role="button">Administrar Artículos</a>
         </p>
     </div> 
 

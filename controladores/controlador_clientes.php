@@ -38,7 +38,6 @@ class controladorClientes{
         }
 
         include_once("vistas/clientes/login.php");
-        include_once("vistas/template.php"); //Para mostrar el usuario del login en el nav     
     }
 
     public function logout(){

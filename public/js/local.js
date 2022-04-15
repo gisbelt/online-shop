@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    // ************************************************ 
+
     // Quitar elemento del carrito sin actualizar página 
     var quitar_carrito = $('.quitar_carrito');
     quitar_carrito.on('click',function( ){
@@ -24,5 +26,25 @@ $(document).ready(function(){
     })
 
     // ************************************************ 
+
+    // Agregar elemento al carrito sin actualizar página 
+    var agregar_carrito = $('.agregar_carrito1');
+    agregar_carrito.on('click',function( ){
+        var id = $(this).attr('id');
+        var dataString = 'id='+id;
+
+        var ajax = $.ajax({
+            url: "?controlador=paginas&accion=agregar_al_carrito",
+            type: "POST",
+            data: dataString,
+            success: function(data){
+                $(".carrito_agregado").modal("show");
+            },
+            error: function(){} 
+        })
+    })
+
+    // ************************************************ 
+    
 
 });

@@ -39,6 +39,37 @@ $sesion = session_id();
 
 <!-- ********************************* -->
 
+<div class="contenedor">
+    <div class="caja">
+        <img src="./administrador/img/sala.jpg" alt="">
+        <p>Imagen</p>
+    </div>
+    <div class="caja">
+        <img src="./administrador/img/sala.jpg" alt="">
+        <p>Imagen</p>
+    </div>
+    <div class="caja">
+        <img src="./administrador/img/sala.jpg" alt="">
+        <p>Imagen</p>
+    </div>
+    <div class="caja">
+        <img src="./administrador/img/sala.jpg" alt="">
+        <p>Imagen</p>
+    </div>
+    <div class="caja">
+        <img src="./administrador/img/sala.jpg" alt="">
+        <p>Imagen</p>
+    </div>
+    <div class="caja">
+        <img src="./administrador/img/sala.jpg" alt="">
+        <p>Imagen</p>
+    </div>
+</div>
+<hr class="my-4">
+<!-- Agregar slider de target  -->
+
+<!-- ********************************* -->
+
 <br><br>
 <div class="container">
 <div class="row">
@@ -47,24 +78,29 @@ $sesion = session_id();
     <div class="col-md-4">
         <div class="card">
             <img class="card-img-top" src="./administrador/img/<?php echo $articulos->imagen;?>" alt="" style="width: 100%; height: 300px;">
-            <div class="card-body">
-                <h5 class="card-title text-dark text-center" style="height: 48px;"><?php echo $articulos->nombre_articulo;?></h5>
-                <hr class="my-2">
+            <div class="card-body centrado">
+                <h5 class="card-title text-dark text-center " style=""><?php echo $articulos->nombre_articulo;?></h5>
                 <h6 class="card-title text-success text-center">$<?php echo number_format($articulos->precio_venta, 2);?></h6>
+                <hr class="my-2">
+                <!-- botones  -->
                 <div class="centrar_vertical">
-                    <a name="" id="" class="btn btn-info" href="" role="button">Ver</a>
+                    <div class="caja_btn_ver">
+                        <a name="" id="" class="btn btn-info" href="" role="button">Ver</a>
+                    </div>
+                    <!-- Si ya está en carrito  -->
+                    <!-- <form action="" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="id_articulos" value="<?php echo $articulos->id_articulos ?>">
+                        <span name="" id="" class="btn btn-success" style="margin-top: 10px;">En el carrito</span>
+                        <button type="submit" name="" id="" class="btn btn-danger" style="margin-top: 10px;">Quitar del carrito</button>
+                    </form> -->
+                    <!-- Si no está en carrito -->
+                    <div class="caja_btn_agregar">
+                        <a name="agregar_carrito1" id="<?php echo $articulos->id_articulos ?>" class="btn btn-danger agregar_carrito1">
+                            <i class="bi bi-plus"></i>
+                        </a>
+                    </div>
                 </div>
-                <!-- Si ya está en carrito  -->
-                <!-- <form action="" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="id_articulos" value="<?php echo $articulos->id_articulos ?>">
-                    <span name="" id="" class="btn btn-success" style="margin-top: 10px;">En el carrito</span>
-                    <button type="submit" name="" id="" class="btn btn-danger" style="margin-top: 10px;">Quitar del carrito</button>
-                </form> -->
-                <!-- Si no está en carrito -->
-                <form action="" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="id_articulos" value="<?php echo $articulos->id_articulos ?>">
-                    <button type="submit" name="agregar_carrito1" id="" class="btn btn-danger centrado mt-2">Añadir al carrito</button>
-                </form>
+                <!-- botones  -->
             </div>
         </div>
     </div>
@@ -72,7 +108,7 @@ $sesion = session_id();
 </div>
 </div> <!--  Container -->
 
-<!-- ********************************* -->
+<!-- ********************************* -->  
 
 <br><br>
 <div class="p-5 bg-dark text-center">
@@ -98,21 +134,50 @@ $sesion = session_id();
             <img class="card-img-top" src="./administrador/img/<?php echo $articulosDes->imagen;?>" alt="" style="height: 444px;">
             <div class="card-body">
                 <h5 class="card-title text-dark text-center"><?php echo $articulosDes->nombre_articulo;?></h5>
-                <hr class="my-2">
                 <h6 class="card-title text-success text-center"">$<?php echo number_format($articulosDes->precio_venta, 2);;?></h6>
+                <hr class="my-2">
+                <!-- botones  -->
                 <div class="centrar_vertical">
-                    <a name="" id="" class="btn btn-info" href="" role="button">Ver más</a>
+                    <div class="caja_btn_ver">
+                        <a name="" id="" class="btn btn-info" href="" role="button">Ver más</a>
+                    </div>
+                    <div>
+                        <form action="" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="id_articulos" value="<?php echo $articulosDes->id_articulos ?>">
+                            <button type="submit" name="agregar_carrito2" id="" class="btn btn-danger centrado">
+                                <i class="bi bi-plus"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
-                <form action="" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="id_articulos" value="<?php echo $articulosDes->id_articulos ?>">
-                    <button type="submit" name="agregar_carrito2" id="" class="btn btn-danger centrado mt-2">Añadir al carrito</button>
-                </form>
+                <!-- botones  -->
             </div>
         </div>
     </div>
     <?php } ?>
 </div>
 </div> <!--  Container -->
+
+<!-- ********************************* -->
+
+<!-- Modal para mostrar mensaje de éxito al agregar un carrito  -->
+<div class="carrito_agregado modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">¡En hora buena!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Se ha agregado el producto al carrito exitosamente
+            </div>
+            <div class="modal-footer">
+                <a href="?controlador=carrito&accion=vercarrito" class="btn btn-primary">Ver Carrito</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- ********************************* -->
 

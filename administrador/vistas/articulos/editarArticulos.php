@@ -49,17 +49,17 @@
                     <label for="estado">Estado: </label><span>
                     <select class="form-control" name="iestado" id="iestado">
                     <option><?php echo $buscar->estado;?></option>  
-                    <option value="Activo">Activo</option>
-                    <option value="Inactivo">Inactivo</option>
+                    <option value="activo">activo</option>
+                    <option value="inactivo">inactivo</option>
                     </select>
                 </div>                
 
                 <div class="form-group">
-                    <label for="categoria">Categoría: </label> <span><strong><?php echo $buscar->categoria;?></strong></span>
+                    <label for="categoria">Categoría: </label> 
                     <select class="form-control" name="icategoria" id="icategoria" >
-                    <option><?php echo $buscar->categoria;?></option> 
-                    <?php foreach($categoria as $cat) { ?>                                                       
-                    <option value="<?php echo $cat->id_categoria;?>" ><?php echo $cat->categoria;?></option>
+                    <option value="<?php echo $buscar->id_categoria;?>"><?php echo $buscar->categoria;?></option> 
+                    <?php foreach($categoria as $cat) { ?>                                                                           
+                    <option value="<?php echo $cat->id_categoria;?>"><?php echo $cat->categoria;?></option>
                     <?php } ?>
                     </select>
                 </div>

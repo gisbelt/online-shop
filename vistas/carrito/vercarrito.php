@@ -17,10 +17,12 @@ session_start();
                 <p class="card-text"><?php echo $car->descripcion;?></p>
                 <label for=""><strong>Categoría: </strong></label>
                 <p class="card-text"><?php echo $car->categoria;?></p>
+                <label for=""><strong>Cantidad: </strong></label>
+                <input type="number" name="" id="cantidad" value="1">
             </div>
             <div class="col-md-3">
-                <h4 class="card-title text-success">$<?php echo number_format($car->precio_venta, 2);?></h4>
-                <form method="POST" >
+                <h4 class="card-title text-success derecha m-2" id="precio_venta">$<?php echo number_format($car->precio_venta, 2);?></h4>
+                <form method="POST" class="derecha m-2">
                     <a name="quitar_carrito" id="<?php echo $car->id_articulos ?>" class="btn btn-secondary quitar_carrito" ><i class="bi bi-x-circle"></i> Eliminar</a>
                 </form>  
             </div>  
