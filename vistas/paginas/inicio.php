@@ -4,7 +4,7 @@ $sesion = session_id();
 // echo $sesion;
 ?>
 <!-- Esto es lo primero que quiero que vea el usuario -->
-<div id="carouselId" class="carousel slide " data-bs-ride="carousel">
+<div id="carouselId" class="carousel slide" data-bs-ride="carousel">
     <ol class="carousel-indicators">
         <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
         <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
@@ -31,6 +31,93 @@ $sesion = session_id();
       </button>
 </div>
 <br><br>
+
+<!-- ********************************* -->
+<div class="ofertas1 mb-4">
+    <div class="row primera-fila">
+        <!-- 1 -->
+        <div class="col-md-4 item-principal">
+            <div class="fondo bg-light">
+                <div class="texto">
+                    <h5 class="text-dark mb-4">Oferta del día</h5>
+                </div>
+                <div class="row segunda-fila mb-4">
+                    <div class="col-md-6">
+                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
+                        <p>Imagen</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
+                        <p>Imagen</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
+                        <p>Imagen</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
+                        <p>Imagen</p>
+                    </div>
+                </div>     
+            </div>         
+        </div>
+        <!-- 2 -->
+        <div class="col-md-4 item-principal">
+            <div class="fondo bg-light">
+                <div class="texto">
+                    <h5 class="text-dark mb-4">Ofertas imperdibles</h5>
+                </div>
+                <div class="row segunda-fila mb-4">
+                    <div class="col-md-6">
+                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
+                        <p>Imagen</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
+                        <p>Imagen</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
+                        <p>Imagen</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
+                        <p>Imagen</p>
+                    </div>
+                </div>     
+            </div>         
+        </div>
+        <!-- 3 -->
+        <div class="col-md-4 item-principal">
+            <div class="fondo bg-light">
+                <div class="texto">
+                    <h5 class="text-dark mb-4">Compra con nosotros</h5>
+                </div>
+                <div class="row segunda-fila mb-4">
+                    <div class="col-md-6">
+                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
+                        <p>Imagen</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
+                        <p>Imagen</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
+                        <p>Imagen</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
+                        <p>Imagen</p>
+                    </div>
+                </div>     
+            </div>         
+        </div>
+
+    </div>
+</div>
+<!-- ********************************* -->
+
 
 <!-- ********************************* -->
 

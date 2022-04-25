@@ -3,6 +3,11 @@
     font-family: Montserrat,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 
+.slide{
+    position: absolute !important; 
+    width: 100% !important;
+}
+
 /*TIENDA Y CARRITO*/
 .centrar_vertical{
     display: flex;
@@ -33,6 +38,30 @@
     align-items: flex-end;
     justify-content: end;
 }
+/*TIENDA Y CARRITO*/
+
+
+
+/* Ofertas  */
+.ofertas1{
+    padding: 0px 24px;
+    position: relative;
+    margin-top: 220px;
+}
+.item-principal{
+    padding: 0px 10px;
+}
+.item-principal .fondo{
+    padding: 20px 0px 15px 0px;
+}
+.item-principal .fondo .texto{
+    padding: 0px 20px;
+}
+.item-principal .fondo .segunda-fila{
+    padding: 0px 20px;
+}
+/* Ofertas  */
+
 
 
 /* CSS Para agregar cajas sin bootstrap, con flex, tipo: col-md-4*/
@@ -51,3 +80,4 @@
 .caja img{
     width: 100%;   
 }
+/* CSS Para agregar cajas sin bootstrap, con flex, tipo: col-md-4*/

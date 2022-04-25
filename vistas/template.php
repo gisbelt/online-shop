@@ -56,7 +56,7 @@ $conteo = count(carrito::obtener_id_articulos_carrito());
         <div class="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">
             <li class="nav-item">
                 <a class="nav-link" href="?controlador=carrito&accion=vercarrito" style="margin-right: 10px;" title="Ver carrito">
-                    <strong style="color: rgb(226, 83, 83);">
+                    <strong style="color: rgb(226, 83, 83);" class="conteoCarrito">
                         <?php if ($conteo > 0) { printf("(%d)", $conteo); } ?>
                     </strong>
                     <i class="bi bi-cart2" style="color: #78c2ad"></i>

@@ -38,13 +38,30 @@ class carrito{
         return $sql->execute([$id_sesion, $id_articulos]);
     }
 
-    // Obtener el id_session al añadir un carrito 
+    // Obtener el id_articulos del carrito (columnas)
     public static function obtener_id_articulos_carrito(){
         $conexionBD=BD::crearInstancia();
         $sql= $conexionBD->prepare("SELECT id_articulos FROM carrito where id_sesion=?");
         $id_sesion = $_SESSION['correoCliente'];
         $sql->execute(array($id_sesion));
         return $sql->fetchAll(PDO::FETCH_COLUMN);
+    }
+
+    // El mismo método de arriba pero de otra manera 
+    public static function obtener_id_articulos_carrito2(){
+        $conexionBD=BD::crearInstancia();
+        $sql="SELECT id_articulos FROM carrito where id_sesion=?";
+        $query = $conexionBD->prepare($sql);
+        $id_sesion = $_SESSION['correoCliente'];
+        $query->execute(array($id_sesion));
+        $results=$query->fetchAll(PDO::FETCH_COLUMN);
+        if($query -> rowCount() > 0){
+            foreach($results as $result){
+                $listaCarritos[]=$result;
+            }
+            echo json_encode($listaCarritos);
+        }
+        return $listaCarritos;
     }
 
     // Ver detalles del carrito de compras
