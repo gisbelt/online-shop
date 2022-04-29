@@ -60,6 +60,9 @@
 .item-principal .fondo .segunda-fila{
     padding: 0px 20px;
 }
+.item-principal .fondo .segunda-fila img{
+    height: 80% !important;
+}
 /* Ofertas  */
 
 

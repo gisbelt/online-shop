@@ -1,4 +1,4 @@
-<div class="offset-md-3 col-md-6">
+<div class="offset-md-3 col-md-6" width="50%">
 
     <!-- bs5-card-head-foot   -->
     <div class="card">
@@ -7,11 +7,9 @@
         </div>
         <div class="card-body">
             <!-- Mensaje de error  -->
-            <?php if(isset($mensaje1)) { ?>
-                <div class="alert alert-primary" role="alert">
-                    <?php echo $mensaje1; ?>
-                </div>
-            <?php }?>
+            <div class="alert alert-primary error" role="alert" style="display:none;">
+                Las contraseñas no coinciden
+            </div>
 
             <!-- Mensaje de éxito  -->
             <?php if(isset($mensaje2)) { ?>
@@ -20,12 +18,12 @@
                 </div>
             <?php }?>
 
-            <form action="" method="post">
+            <form action="" method="post" id="formulario_registro">
                 <!-- bs5-form-input   -->
                 <div class="mb-3">
                     <label for="nombre_cliente" class="form-label">Nombre</label>
                     <input type="text"
-                    required class="form-control" name="nombre_cliente" id="nombre_cliente" aria-describedby="helpId" placeholder="Escribe tu nombre">
+                    required autofocus class="form-control" name="nombre_cliente" id="nombre_cliente" aria-describedby="helpId" placeholder="Escribe tu nombre">
                 </div>
 
                 <div class="mb-3">
@@ -40,44 +38,6 @@
                     <input type="email" required class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="Escribe tu correo">
                 </div>
 
-                <div class="mb-3">                 
-                    <label for="tipo_documento" class="form-label">Tipo de documento: </label>
-                    <select class="form-control" name="tipo_documento" id="tipo_documento">
-                    <option>Seleccionar</option>
-                    <?php foreach($tipoDocumento as $tipodocu) { ?>  
-                    <option value="<?php echo $tipodocu->id_tipo_documento;?>" name="id_tipo_documento"><?php echo $tipodocu->tipo_documento;?></option>
-                    <?php } ?>  
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                <label for="documento" class="form-label">Documento</label>
-                <input type="text"
-                    required class="form-control" name="documento" id="documento" aria-describedby="helpId" placeholder="Documento de identidad">
-                </div>
-
-                <div class="mb-3">
-                <label for="dirección" class="form-label">Dirección</label>
-                <input type="text"
-                    required class="form-control" name="dirección" id="dirección" aria-describedby="helpId" placeholder="Nombre de la calle y número de casa/apartamento">
-                </div>
-
-                <div class="mb-3">                 
-                    <label for="codigo_teléfono" class="form-label">Código de teléfono: </label>
-                    <select class="form-control" name="codigo_teléfono" id="codigo_teléfono">
-                    <option>Seleccionar</option>
-                    <?php foreach($codigoTelefono as $codtele) { ?>  
-                    <option value="<?php echo $codtele->id_codigo_telefono;?>" name="id_codigo_telefono"><?php echo $codtele->codigo_telefono;?></option>
-                    <?php } ?>  
-                    </select>
-                </div>
-                
-                <div class="mb-3">
-                <label for="telefono" class="form-label">Télefono</label>
-                <input type="text"
-                    required class="form-control" name="telefono" id="telefono" aria-describedby="helpId" placeholder="Escribe tu teléfono">
-                </div>
-
                 <div class="mb-3">
                     <label for="contrasenia" class="form-label">Contraseña:</label>
                     <input type="password" required  class="form-control" name="contrasenia" id="contrasenia" placeholder="Escribe tu contraseña">
@@ -89,14 +49,52 @@
                 </div>
 
                 <!-- bs5-button-input  -->
-                <button type="submit" name="accion" value="Registrarse" class="btn btn-success">Registrarse</button>
+                <a type="submit" name="registrar_cliente" id="registrar_cliente" value="Registrarse" class="btn btn-success registrar_cliente">Registrarse</a>
                 <!-- <input name="" id="" class="btn btn-success" type="submit" value="Registrarse" > -->
                 <a href="?controlador=empleados&accion=inicio" class="btn btn-primary">Cancelar</a>
-
             </form>    
-
         </div>
     </div>
     <!-- Card   -->
 
+</div>
+
+
+<!-- ********************************* -->
+
+<!-- Modal para mostrar mensaje de éxito al registrar cliente  -->
+<div class="cliente_registrado modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">¡En hora buena!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Se ha registrado exitosamente
+            </div>
+            <div class="modal-footer">
+                <a href="?controlador=clientes&accion=login" class="btn btn-primary">Iniciar Sesión</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal para mostrar mensaje de error por no coinidir contraseña  -->
+<div class="error_contrasenia modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">¡ERROR!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Las contraseñas no coinciden
+            </div>
+            <div class="modal-footer">
+                <!-- <a href="?controlador=clientes&accion=login" class="btn btn-primary">Iniciar Sesión</a> -->
+                <button type="button" class="btn btn-secondary close-contrasenia" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>

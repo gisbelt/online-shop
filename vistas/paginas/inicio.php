@@ -5,7 +5,7 @@ $sesion = session_id();
 ?>
 <!-- Esto es lo primero que quiero que vea el usuario -->
 <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
-    <ol class="carousel-indicators">
+    <ol class="carousel-indicators d-none">
         <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
         <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
         <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
@@ -39,25 +39,17 @@ $sesion = session_id();
         <div class="col-md-4 item-principal">
             <div class="fondo bg-light">
                 <div class="texto">
-                    <h5 class="text-dark mb-4">Oferta del día</h5>
+                    <h5 class="text-dark mb-4 fw-bold">Oferta del día</h5>
                 </div>
                 <div class="row segunda-fila mb-4">
+                    <?php foreach($articulosDes3 as $articulosDes3) { ?>
                     <div class="col-md-6">
-                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
-                        <p>Imagen</p>
+                        <a href="?controlador=tienda&accion=ver_mas&id_articulos=<?php echo $articulosDes3->id_articulos;?>">
+                        <img class="card-img-top mb-2" src="./administrador/img/<?php echo $articulosDes3->imagen;?>" alt="">
+                        </a>
+                        <a href="?controlador=tienda&accion=ver_mas&id_articulos=<?php echo $articulosDes3->id_articulos;?>" class="text-dark" title="ver artículo"><?php echo $articulosDes3->nombre_articulo;?></a>
                     </div>
-                    <div class="col-md-6">
-                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
-                        <p>Imagen</p>
-                    </div>
-                    <div class="col-md-6">
-                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
-                        <p>Imagen</p>
-                    </div>
-                    <div class="col-md-6">
-                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
-                        <p>Imagen</p>
-                    </div>
+                    <?php } ?>
                 </div>     
             </div>         
         </div>
@@ -65,25 +57,17 @@ $sesion = session_id();
         <div class="col-md-4 item-principal">
             <div class="fondo bg-light">
                 <div class="texto">
-                    <h5 class="text-dark mb-4">Ofertas imperdibles</h5>
+                    <h5 class="text-dark mb-4 fw-bold">Ofertas imperdibles <span class="text-danger mb-4">20% off</span></h5>
                 </div>
                 <div class="row segunda-fila mb-4">
+                    <?php foreach($articulosDes2 as $articulosDes2) { ?>
                     <div class="col-md-6">
-                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
-                        <p>Imagen</p>
+                        <a href="?controlador=tienda&accion=ver_mas&id_articulos=<?php echo $articulosDes2->id_articulos;?>">
+                            <img class="card-img-top mb-2" src="./administrador/img/<?php echo $articulosDes2->imagen;?>" alt="">
+                        </a>
+                        <a href="?controlador=tienda&accion=ver_mas&id_articulos=<?php echo $articulosDes2->id_articulos;?>" class="text-dark" title="ver artículo"><?php echo $articulosDes2->nombre_articulo;?></a>
                     </div>
-                    <div class="col-md-6">
-                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
-                        <p>Imagen</p>
-                    </div>
-                    <div class="col-md-6">
-                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
-                        <p>Imagen</p>
-                    </div>
-                    <div class="col-md-6">
-                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
-                        <p>Imagen</p>
-                    </div>
+                    <?php } ?>
                 </div>     
             </div>         
         </div>
@@ -91,7 +75,7 @@ $sesion = session_id();
         <div class="col-md-4 item-principal">
             <div class="fondo bg-light">
                 <div class="texto">
-                    <h5 class="text-dark mb-4">Compra con nosotros</h5>
+                    <h5 class="text-dark mb-4 fw-bold">Compra con nosotros</h5>
                 </div>
                 <div class="row segunda-fila mb-4">
                     <div class="col-md-6">
@@ -172,7 +156,7 @@ $sesion = session_id();
                 <!-- botones  -->
                 <div class="centrar_vertical">
                     <div class="caja_btn_ver">
-                        <a name="" id="" class="btn btn-info" href="" role="button">Ver</a>
+                        <a href="?controlador=tienda&accion=ver_mas&id_articulos=<?php echo $articulos->id_articulos;?>" class="btn btn-info"  title="ver artículo" role="button">Ver</a>
                     </div>
                     <!-- Si ya está en carrito  -->
                     <!-- <form action="" method="post" enctype="multipart/form-data">
@@ -226,7 +210,7 @@ $sesion = session_id();
                 <!-- botones  -->
                 <div class="centrar_vertical">
                     <div class="caja_btn_ver">
-                        <a name="" id="" class="btn btn-info" href="" role="button">Ver más</a>
+                        <a href="?controlador=tienda&accion=ver_mas&id_articulos=<?php echo $articulosDes->id_articulos;?>" class="btn btn-info" title="ver artículo" role="button">Ver más</a>
                     </div>
                     <div>
                         <form action="" method="post" enctype="multipart/form-data">
@@ -260,7 +244,7 @@ $sesion = session_id();
             </div>
             <div class="modal-footer">
                 <a href="?controlador=carrito&accion=vercarrito" class="btn btn-primary">Ver Carrito</a>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir viendo</button>
             </div>
         </div>
     </div>

@@ -50,18 +50,12 @@ class carrito{
     // El mismo método de arriba pero de otra manera 
     public static function obtener_id_articulos_carrito2(){
         $conexionBD=BD::crearInstancia();
-        $sql="SELECT id_articulos FROM carrito where id_sesion=?";
-        $query = $conexionBD->prepare($sql);
         $id_sesion = $_SESSION['correoCliente'];
-        $query->execute(array($id_sesion));
-        $results=$query->fetchAll(PDO::FETCH_COLUMN);
-        if($query -> rowCount() > 0){
-            foreach($results as $result){
-                $listaCarritos[]=$result;
-            }
-            echo json_encode($listaCarritos);
-        }
-        return $listaCarritos;
+        $sql=$conexionBD->query("SELECT COUNT(*) as numrows FROM carrito WHERE id_sesion='$id_sesion'");
+        $sql->execute();
+        $get_total = $sql->fetch(PDO::FETCH_ASSOC); 
+        $row = $get_total['numrows'];
+        return $row;
     }
 
     // Ver detalles del carrito de compras

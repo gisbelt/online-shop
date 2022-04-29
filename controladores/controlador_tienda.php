@@ -12,12 +12,10 @@ class controladorTienda{
 
         //Buscar categorias
         $categoria=categorias::consultarCategoria();
-        //Buscar todos los artículos
+        //Buscar todos los artículos (7)
         $articulos=tienda::consultarArticulos();
+        $pages=tienda::paginacion();
 
-        // if (!isset($_POST["id_articulos"])) {
-        //     exit("No hay id_articulos");
-        // }
         // Agregar al carrito
         if($_POST) {
             $id_articulos = $_POST["id_articulos"];
@@ -25,8 +23,18 @@ class controladorTienda{
             header("location:?controlador=tienda&accion=tienda");
             // error aqui 
         } 
-
         include_once("vistas/tienda/tienda.php");
+    }
+
+    public function paginacion(){
+        tienda::paginacion2();
+    }
+
+    public function ver_mas(){
+        //Buscar artículos por ID
+        $id_articulos = $_GET["id_articulos"];
+        $articulosPorID=tienda::consultarArticulosPorID($id_articulos);
+        include_once("vistas/tienda/ver_mas.php");
     }
 
     public function login(){

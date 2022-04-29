@@ -14,14 +14,20 @@ class controladorPaginas{
         
         //Buscar todos los artículos
         $articulos=inicio::consultarArticulos();
-        //Buscar los artículos con 20% de descuento
+        //Buscar todos los artículos con 20% de descuento
         $articulosDes=inicio::consultarArticulosDescuento();
+        //Buscar 4 artículos con 20% de descuento
+        $articulosDes2=inicio::consultarArticulosDescuento2();
+        //Buscar 4 artículos con 10% de descuento
+        $articulosDes3=inicio::consultarArticulosDescuento3();
 
         $carrito=carrito::obtener_detalles_articulos_carrito();
-              
-        // $productoYaEstaEnCarrito=carrito::obtener_id_articulos_carrito();
         
+        $conteo=carrito::obtener_id_articulos_carrito2();
+        $total = $conteo + 1;
+        echo "<input type='hidden' class='conteo' value='$total'>";
 
+        // $productoYaEstaEnCarrito=carrito::obtener_id_articulos_carrito();
         include_once("vistas/paginas/inicio.php");
     }
 
@@ -32,11 +38,8 @@ class controladorPaginas{
     }
 
     public function conteo_carrito(){
-        $conteo = carrito::obtener_id_articulos_carrito2();
-        // $conteo = count(carrito::obtener_id_articulos_carrito());
-        // echo json_encode($conteo);
-        // include_once("vistas/template.php");
-        // return $conteo;
+        $conteo=carrito::obtener_id_articulos_carrito2();
+        echo "<input type='hidden' class='conteo' value='$conteo'>";
     }
 
     public function error(){

@@ -31,11 +31,9 @@ class clientes{
     }
 
     public static function consultar(){
-        $listaEmpleados=[]; //Arreglo para almacenar todos los empleados que vamos a recuperar de la base de datos
+        $listaEmpleados=[]; 
         $conexionBD=BD::crearInstancia();
         $sql=$conexionBD->query("SELECT * FROM empleados");
-        // recuperar la información para almacenarla en la lista 
-        // fetchAll va a tener todos los registros y lo vamos a recibir como si fuera uno 
         foreach($sql->fetchAll() as $empleados){
             $listaEmpleados[]=new clientes($empleados['id'],$empleados['nombre'],$empleados['correo']);
         }
@@ -43,12 +41,21 @@ class clientes{
     }
 
     // Crear/Insertar Clientes
-    public static function crear($nombre_cliente, $apellido_cliente, $correo_cliente, $id_tipo_documento, $documento, $direccion, $id_codigo_telefono, $telefono, $contrasenia){
+    public static function crear_clientes($nombre_cliente, $apellido_cliente, $correo_cliente, $id_tipo_documento, $documento, $direccion, $id_codigo_telefono, $telefono, $contrasenia){
         $conexionBD=BD::crearInstancia();
         $sql= $conexionBD->prepare("INSERT INTO cliente (`nombre_cliente`, `apellido_cliente`, `correo_cliente`, `id_tipo_documento`, `documento`, `direccion`, `id_codigo_telefono`, `telefono`, `contrasenia`) VALUES (?,?,?,?,?,?,?,?,?)"); 
         $sql->execute(array($nombre_cliente, $apellido_cliente, $correo_cliente, $id_tipo_documento, $documento, $direccion, $id_codigo_telefono, $telefono, $contrasenia));
         // Error aqui
     }
+
+    // Crear/Registrar Clientes
+    public static function crear($nombre_cliente,$apellido_cliente,$correo_cliente,$contrasenia){
+        $conexionBD=BD::crearInstancia();
+        $sql= $conexionBD->prepare("INSERT INTO clientes (nombre_cliente, apellido_cliente, correo_cliente, contrasenia) VALUES (?,?,?,?)"); 
+        return $sql->execute([$nombre_cliente, $apellido_cliente, $correo_cliente, $contrasenia]);
+        // Error aqui
+    }
+
 
     public static function borrar($id){
         $conexionBD=BD::crearInstancia();

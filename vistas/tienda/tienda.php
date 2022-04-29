@@ -31,10 +31,48 @@
         </div>     
         <br>
         <?php  } ?>
+        
+        <?php 
+        if ($pages > 1) {
+        ?>
+        <nav aria-label="Page navigation">
+          <ul class="pagination justify-content-center">
+            <!-- flecha  -->
+            <li class="page-item disabled">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+            </li>
+            <!-- flecha  -->
+            <?php 
+            for ($i=1;$i<=$pages;$i++) { 
+            $class_active = '';
+            if ($i == 1) {
+                $class_active = 'active';
+            }
+            ?>
+            <li class="page-item <?php echo $class_active?> numero_paginacion"><a class="page-link link_paginacion" data="<?php echo $i?>" href=""><?php echo $i?></a></li>
+            <?php } ?>
+            <!-- flecha  -->
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="visually-hidden">Next</span>
+              </a>
+            </li>
+            <!-- flecha  -->
+          </ul>
+        </nav>
+        <?php 
+        }
+        ?>
+
     </div>
 </div>
 </div>
-<!-- float-left; alinea a la izquierda
+<!-- 
+float-left; alinea a la izquierda
 float-right: alinea a la derecha
 clearfix: evita que el contenido se pise en las alineaciones
 floar-[tamaño]-[alineación]: hace que los elementos cambien de alineación, según nos interese en cada tamaño de pantalla.
@@ -51,4 +89,5 @@ align-self-start: alinea el elemento en si mismo de forma vertical arriba
 align-self-center: alinea el elemento en si mismo de forma vertical centrado
 align-self-end: alinea el elemento en si mismo de forma vertical abajo
 fixed-top: deja fijo el contenido arriba del navegador
-fixed-bottom: deja fijo el contenido abajo del navegador -->
+fixed-bottom: deja fijo el contenido abajo del navegador 
+-->

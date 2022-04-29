@@ -47,35 +47,22 @@ class controladorClientes{
     }
 
     public function crear(){
-        //Buscar tipoDocumento
-        $tipoDocumento=tipoDocumento::consultarTipoDocumento();
-        //Buscar codigoTelefono
-        $codigoTelefono=codigoTelefono::consultarCodigoTelefono();
-        
-        // Recepcionamos los datos por medio de post
-        if($_POST){
-
-            // $id_cliente=$_POST['id_cliente'];
-            $nombre_cliente=$_POST['nombre_cliente'];
-            $apellido_cliente=$_POST['apellido_cliente'];
-            $correo_cliente=$_POST['correo_cliente'];
-            $id_tipo_documento=$_POST['id_tipo_documento'];
-            $documento=$_POST['documento'];
-            $direccion=$_POST['direccion'];
-            $id_codigo_telefono=$_POST['id_codigo_telefono'];
-            $telefono=$_POST['telefono'];
-            $contrasenia=$_POST['contrasenia'];
-            $contrasenia2=$_POST['contrasenia2'];
+              
+        $nombre_cliente=$_POST['nombre_cliente'];
+        $apellido_cliente=$_POST['apellido_cliente'];
+        $correo_cliente=$_POST['correo_cliente'];
+        $contrasenia=$_POST['contrasenia'];
+        $contrasenia2=$_POST['contrasenia2'];
 
             // if($contrasenia2 != $contrasenia){
             //     $mensaje1 = "Error, la confirmación de contraseña no es correcta";
             // }
             // else{
                 // ejecutamos 
-                clientes::crear($nombre_cliente,$apellido_cliente, $correo_cliente, $id_tipo_documento, $documento, $direccion, $id_codigo_telefono, $telefono, $contrasenia);       
+                clientes::crear($nombre_cliente,$apellido_cliente, $correo_cliente, $contrasenia);       
                 // header("location:./?controlador=paginas&accion=inicio");
             // }                      
-        }
+        
         include_once("vistas/clientes/crear.php");
     }
 
