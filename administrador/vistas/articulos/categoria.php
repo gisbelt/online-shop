@@ -11,7 +11,7 @@
         <table class="table table-bordered table-responsive">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <!-- <th>ID</th> -->
                     <th>Código</th>
                     <th>Nombre</th>
                     <th>Descripción</th>
@@ -19,6 +19,7 @@
                     <th>Cantidad</th>
                     <th>Estado</th>
                     <th>Categoría</th>
+                    <th>Descuento</th>
                     <th>Imagen</th>
                     <th>Acciones</th>
                 </tr>
@@ -27,7 +28,7 @@
             <tbody>
             <?php foreach($buscar as $bus) { ?> 
                 <tr>
-                    <td><?php echo $bus->id_articulos; ?></td>
+                    <!-- <td><?php echo $bus->id_articulos; ?></td> -->
                     <td><?php echo $bus->codigo_articulo; ?></td>
                     <td><?php echo $bus->nombre_articulo; ?></td>
                     <td><?php echo $bus->descripcion; ?>
@@ -36,8 +37,9 @@
                     <td><?php echo $bus->cantidad; ?></td>
                     <td><?php echo $bus->estado; ?></td>
                     <td><?php echo $bus->categoria;?></td>
+                    <td><?php echo $bus->descuento; ?></td>
                     <td>
-                        <img class="card-img-top" src="./img/<?php echo $bus->imagen; ?>" alt="Card image cap">
+                        <img class="card-img-top" src="./asset/img/<?php echo $bus->imagen; ?>" alt="Card image cap">
                     </td>
 
                     <td>

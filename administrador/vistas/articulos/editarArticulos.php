@@ -77,7 +77,7 @@
 
                 <div class = "form-group">
                     <label for="imagen">Imagen: </label>
-                    <img class="img-thumbnail rounded" src="./img/<?php echo $buscar->imagen;?>" width="100" alt="" srcset="" name="aimagen">                    
+                    <img class="img-thumbnail rounded" src="./asset/img/<?php echo $buscar->imagen;?>" width="100" alt="" srcset="" name="aimagen">                    
                     <input type="file" class="form-control" id="eimagen" name="eimagen" placeholder="Añadir archivo" value="<?php echo $buscar->imagen;?>">
                 </div>                            
 

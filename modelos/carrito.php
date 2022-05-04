@@ -61,7 +61,7 @@ class carrito{
     // Ver detalles del carrito de compras
     public static function obtener_detalles_articulos_carrito(){
         $id_sesion = $_SESSION['correoCliente'];
-        $listaCarrito=[]; //Arreglo para almacenar todos los empleados que vamos a recuperar de la base de datos
+        $listaCarrito=[]; 
         $conexionBD=BD::crearInstancia();
         $sql=$conexionBD->query("SELECT articulos.id_articulos, articulos.nombre_articulo, articulos.descripcion, articulos.precio_venta, articulos.imagen, categoria.categoria FROM articulos INNER JOIN carrito ON carrito.id_articulos=articulos.id_articulos INNER JOIN categoria ON categoria.id_categoria=articulos.id_categoria WHERE carrito.id_sesion='$id_sesion' ");
         foreach($sql->fetchAll() as $carro){

@@ -1,10 +1,8 @@
 <?php
-
 include_once("modelos/clientes.php");
 include_once("modelos/tipo_documento.php");
 include_once("modelos/codigo_telefono.php");
 include_once("modelos/conexion.php");
-session_start();
 
 class controladorClientes{
     // metodos
@@ -20,23 +18,18 @@ class controladorClientes{
             if($correo=="" || $contrasenia==""){
                 $mensaje1="Por favor debe ingresar los datos";
             }
-            else{
-                $conexionBD=BD::crearInstancia();
-                $sql= $conexionBD->prepare("SELECT correo_cliente, contrasenia, nombre_cliente FROM clientes WHERE correo_cliente=?"); 
-                $sql->execute(array($correo));
-                $consultarCliente=$sql->fetch(PDO::FETCH_LAZY);
-                if($consultarCliente->contrasenia==$contrasenia && $consultarCliente->correo_cliente==$correo){
-                    // session_start();
+            else{ 
+                $consultarCliente=clientes::login($correo); 
+                if($consultarCliente['contrasenia']==$contrasenia && $consultarCliente['correo_cliente']==$correo){
                     $_SESSION['correo_cliente'] = "ok";
                     $_SESSION['correoCliente']=$consultarCliente->correo_cliente;
                     $_SESSION['nombreCliente']=$consultarCliente->nombre_cliente;
                     header("location:?controlador=paginas&accion=inicio");  
                 }else{
                     $mensaje2="Error, el correo o contraseña son incorrectos";
-                }                 
+                }             
             }                
         }
-
         include_once("vistas/clientes/login.php");
     }
 
@@ -46,24 +39,26 @@ class controladorClientes{
         header("location:?controlador=clientes&accion=login");
     }
 
-    public function crear(){
-              
-        $nombre_cliente=$_POST['nombre_cliente'];
-        $apellido_cliente=$_POST['apellido_cliente'];
-        $correo_cliente=$_POST['correo_cliente'];
-        $contrasenia=$_POST['contrasenia'];
-        $contrasenia2=$_POST['contrasenia2'];
-
-            // if($contrasenia2 != $contrasenia){
-            //     $mensaje1 = "Error, la confirmación de contraseña no es correcta";
-            // }
-            // else{
-                // ejecutamos 
-                clientes::crear($nombre_cliente,$apellido_cliente, $correo_cliente, $contrasenia);       
-                // header("location:./?controlador=paginas&accion=inicio");
-            // }                      
-        
+    public function registrarse(){
+        // if($_POST){
+        //     $nombre_cliente=$_POST['nombre_cliente'];
+        //     $apellido_cliente=$_POST['apellido_cliente'];
+        //     $correo_cliente=$_POST['correo_cliente'];
+        //     $contrasenia=$_POST['contrasenia'];
+        //     clientes::crear($nombre_cliente,$apellido_cliente,$correo_cliente,$contrasenia);       
+        // }
         include_once("vistas/clientes/crear.php");
+    }
+
+    public function crear(){
+        if($_POST){
+            $nombre_cliente=$_POST['nombre_cliente'];
+            $apellido_cliente=$_POST['apellido_cliente'];
+            $correo_cliente=$_POST['correo_cliente'];
+            $contrasenia=$_POST['contrasenia'];
+            clientes::crear($nombre_cliente,$apellido_cliente,$correo_cliente,$contrasenia);       
+        }
+        // include_once("vistas/clientes/crear.php");
     }
 
     public function editar(){

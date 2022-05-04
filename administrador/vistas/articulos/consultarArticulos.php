@@ -11,7 +11,7 @@
         <table class="table table-bordered table-responsive">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <!-- <th>ID</th> -->
                     <th>Código</th>
                     <th>Nombre</th>
                     <th>Descripción</th>
@@ -27,7 +27,7 @@
             <tbody>
             <?php foreach($articulos as $art) { ?> 
                 <tr>
-                    <td id="id_articulos<?php echo $art->id_articulos; ?>" name="id_articulos"><?php echo $art->id_articulos; ?></td>
+                    <!-- <td id="id_articulos<?php echo $art->id_articulos; ?>" name="id_articulos"><?php echo $art->id_articulos; ?></td> -->
                     <td id="codigo_articulo<?php echo $art->id_articulos; ?>" name="codigo_articulo"><?php echo $art->codigo_articulo; ?></td>
                     <td id="nombre_articulo<?php echo $art->id_articulos; ?>" name="nombre_articulo"><?php echo $art->nombre_articulo; ?></td>
                     <td id="descripcion<?php echo $art->id_articulos; ?>" name="descripcion"><?php echo $art->descripcion; ?></td>
@@ -37,7 +37,7 @@
                     <td id="categoria<?php echo $art->id_articulos; ?>" name="categoria"><?php echo $art->categoria; ?></td>
                     <td id="descuento<?php echo $art->id_articulos; ?>" name="descuento"><?php echo $art->descuento; ?></td>
                     <td>
-                        <img class="card-img-top" src="./img/<?php echo $art->imagen; ?>" alt="Card image cap" name="imagen">
+                        <img class="card-img-top" src="./asset/img/<?php echo $art->imagen; ?>" alt="Card image cap" name="imagen">
                     </td>
 
                     <td>

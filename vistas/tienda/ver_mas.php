@@ -4,10 +4,10 @@ session_start();
 <br>
 
 <?php // foreach($carrito as $car) { ?>
-<div class="row">
+<div class="row m-0">
     <?php foreach($articulosPorID as $art_porid) { ?>
     <div class="col-md-5 p-5">
-        <img class="card-img-top" src="./administrador/img/<?php echo $art_porid->imagen; ?>" alt="" style="" alt="Card image cap">
+        <img class="card-img-top" src="./administrador/asset/img/<?php echo $art_porid->imagen; ?>" alt="" style="" alt="Card image cap">
     </div>
     <div class="col-md-3 pt-5">
         <h4 class="card-title text-danger"><?php echo $art_porid->nombre_articulo; ?></h4>
@@ -31,35 +31,38 @@ session_start();
 
 <!-- ********************************* -->
 
-<h5 class="text-center mt-4">¿Qué otros productos compran los clientes?</h5>
-<hr class="my-4">
-<div class="contenedor">
+<div class="productos_destacados centrar_vertical pt-2">
+    <h5 class="text-center text-light mt-4">¿Qué otros productos compran los clientes?</h5>
+    <hr class="my-4">
+</div>
+
+<div class="contenedor pt-3 mb-2">>
     <div class="caja">
-        <img src="./administrador/img/sala.jpg" alt="">
-        <p>Imagen</p>
+        <img src="./administrador/asset/img/sala.jpg" alt="">
+        <p class="text-light" >Imagen</p>
     </div>
     <div class="caja">
-        <img src="./administrador/img/sala.jpg" alt="">
-        <p>Imagen</p>
+        <img src="./administrador/asset/img/sala.jpg" alt="">
+        <p class="text-light" >Imagen</p>
     </div>
     <div class="caja">
-        <img src="./administrador/img/sala.jpg" alt="">
-        <p>Imagen</p>
+        <img src="./administrador/asset/img/sala.jpg" alt="">
+        <p class="text-light" >Imagen</p>
     </div>
     <div class="caja">
-        <img src="./administrador/img/sala.jpg" alt="">
-        <p>Imagen</p>
+        <img src="./administrador/asset/img/sala.jpg" alt="">
+        <p class="text-light" >Imagen</p>
     </div>
     <div class="caja">
-        <img src="./administrador/img/sala.jpg" alt="">
-        <p>Imagen</p>
+        <img src="./administrador/asset/img/sala.jpg" alt="">
+        <p class="text-light" >Imagen</p>
     </div>
     <div class="caja">
-        <img src="./administrador/img/sala.jpg" alt="">
-        <p>Imagen</p>
+        <img src="./administrador/asset/img/sala.jpg" alt="">
+        <p class="text-light" >Imagen</p>
     </div>
 </div>
-<hr class="my-4">
+<!-- <hr class="my-4"> -->
 <!-- Agregar slider de target  -->
 
 <!-- ********************************* -->

@@ -39,7 +39,7 @@ class controladorArticulos {
 
             if($tmpimagen!=""){
                 // Si no está vacía mover imagen a carpeta img
-                move_uploaded_file($tmpimagen,"./img/".$nombreArchivo);
+                move_uploaded_file($tmpimagen,"./asset/img/".$nombreArchivo);
             }
             // ejecutamos 
             articulos::crear($id_categoria,$codigo_articulo, $nombre_articulo, $descripcion, $precio_venta, $cantidad, $estado, $descuento, $nombreArchivo);       
@@ -82,7 +82,7 @@ class controladorArticulos {
                 // Condicion ternaria:
                 $nombreArchivo=($imagen!="")?$fecha->getTimestamp()."_".$_FILES["eimagen"]["name"]:"imagen.jpg";
                 $tmpimagen=$_FILES["eimagen"]["tmp_name"];
-                move_uploaded_file($tmpimagen,"./img/".$nombreArchivo);
+                move_uploaded_file($tmpimagen,"./asset/img/".$nombreArchivo);
                 
                 // Una vez insertada la nueva imagen, borramos la anterior
                 $conexionBD=BD::crearInstancia();
@@ -122,8 +122,8 @@ class controladorArticulos {
         $borrarimagenn=$sql->fetch(PDO::FETCH_LAZY);
 
         if(isset($borrarimagenn->imagen) && ($borrarimagenn->imagen!="imagen.jpg")){
-            if(file_exists("./img/".$borrarimagenn->imagen)){
-                unlink("./img/".$borrarimagenn->imagen);
+            if(file_exists("./asset/img/".$borrarimagenn->imagen)){
+                unlink("./asset/img/".$borrarimagenn->imagen);
             }
         }           
 

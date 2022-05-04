@@ -30,6 +30,14 @@ class clientes{
         $this->apellido_cliente=$contrasenia;
     }
 
+    public static function login($correo){
+        $conexionBD=BD::crearInstancia();
+        $sql= $conexionBD->prepare("SELECT correo_cliente, contrasenia, nombre_cliente FROM clientes WHERE correo_cliente=?"); 
+        $sql->execute(array($correo));
+        $consultarCliente=$sql->fetch(PDO::FETCH_LAZY);
+        return $consultarCliente;
+    }
+
     public static function consultar(){
         $listaEmpleados=[]; 
         $conexionBD=BD::crearInstancia();
@@ -40,22 +48,31 @@ class clientes{
         return $listaEmpleados;
     }
 
-    // Crear/Insertar Clientes
-    public static function crear_clientes($nombre_cliente, $apellido_cliente, $correo_cliente, $id_tipo_documento, $documento, $direccion, $id_codigo_telefono, $telefono, $contrasenia){
-        $conexionBD=BD::crearInstancia();
-        $sql= $conexionBD->prepare("INSERT INTO cliente (`nombre_cliente`, `apellido_cliente`, `correo_cliente`, `id_tipo_documento`, `documento`, `direccion`, `id_codigo_telefono`, `telefono`, `contrasenia`) VALUES (?,?,?,?,?,?,?,?,?)"); 
-        $sql->execute(array($nombre_cliente, $apellido_cliente, $correo_cliente, $id_tipo_documento, $documento, $direccion, $id_codigo_telefono, $telefono, $contrasenia));
-        // Error aqui
-    }
-
     // Crear/Registrar Clientes
     public static function crear($nombre_cliente,$apellido_cliente,$correo_cliente,$contrasenia){
+        // Validamos que no haya en mismo correo 
         $conexionBD=BD::crearInstancia();
-        $sql= $conexionBD->prepare("INSERT INTO clientes (nombre_cliente, apellido_cliente, correo_cliente, contrasenia) VALUES (?,?,?,?)"); 
-        return $sql->execute([$nombre_cliente, $apellido_cliente, $correo_cliente, $contrasenia]);
-        // Error aqui
+        $sql=$conexionBD->prepare("SELECT COUNT(*) as numrows FROM clientes WHERE correo_cliente = ?");
+        $sql->execute(array($correo_cliente));
+        $row = $sql->fetch(PDO::FETCH_ASSOC);
+        if($row["numrows"] > 0){
+            $result = ["msj" => "0"];
+            echo json_encode($result);
+            die();
+        }
+        // AQUI 
+        else {
+            $sql2= $conexionBD->prepare("INSERT INTO clientes (nombre_cliente, apellido_cliente, correo_cliente, contrasenia, id_tipo_documento, id_codigo_telefono) VALUES (:nombre_cliente,:apellido_cliente,:correo_cliente,:contrasenia, '1', '1')");
+            $sql2->bindParam(":nombre_cliente", $nombre_cliente);
+            $sql2->bindParam(":apellido_cliente", $apellido_cliente);
+            $sql2->bindParam(":correo_cliente", $correo_cliente);
+            $sql2->bindParam(":contrasenia", $contrasenia);
+            $sql2->execute();
+            $result = ["msj" => "1"];
+            echo json_encode($result);
+        }
+        // return $result;
     }
-
 
     public static function borrar($id){
         $conexionBD=BD::crearInstancia();
@@ -73,7 +90,6 @@ class clientes{
         return new empleado($empleados['id'],$empleados['nombre'],$empleados['correo']);
 
     }
-  
 
     public static function editar($id,$nombre,$correo){
         $conexionBD=BD::crearInstancia();

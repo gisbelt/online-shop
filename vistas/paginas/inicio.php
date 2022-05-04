@@ -12,13 +12,13 @@ $sesion = session_id();
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
-            <img class="img-fluid centrado" src="./administrador/img/sala3.jpg" alt="First slide" style="width: 100%; height:440px;">
+            <img class="img-fluid centrado" src="./administrador/asset/img/fondo1.jpg" alt="First slide" style="width: 100%; height:440px;">
         </div>
         <div class="carousel-item">
-            <img class="img-fluid centrado" src="./administrador/img/sala2.jpg" alt="Second slide" style="width: 100%; height:440px;">
+            <img class="img-fluid centrado" src="./administrador/asset/img/fondo2.jpg" alt="Second slide" style="width: 100%; height:440px;">
         </div>
         <div class="carousel-item">
-            <img class="img-fluid centrado" src="./administrador/img/sala.jpg" alt="Third slide" style="width: 100%; height:440px;">
+            <img class="img-fluid centrado" src="./administrador/asset/img/fondo3.jpg" alt="Third slide" style="width: 100%; height:440px;">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
@@ -45,7 +45,7 @@ $sesion = session_id();
                     <?php foreach($articulosDes3 as $articulosDes3) { ?>
                     <div class="col-md-6">
                         <a href="?controlador=tienda&accion=ver_mas&id_articulos=<?php echo $articulosDes3->id_articulos;?>">
-                        <img class="card-img-top mb-2" src="./administrador/img/<?php echo $articulosDes3->imagen;?>" alt="">
+                        <img class="card-img-top mb-2" src="./administrador/asset/img/<?php echo $articulosDes3->imagen;?>" alt="">
                         </a>
                         <a href="?controlador=tienda&accion=ver_mas&id_articulos=<?php echo $articulosDes3->id_articulos;?>" class="text-dark" title="ver artículo"><?php echo $articulosDes3->nombre_articulo;?></a>
                     </div>
@@ -63,7 +63,7 @@ $sesion = session_id();
                     <?php foreach($articulosDes2 as $articulosDes2) { ?>
                     <div class="col-md-6">
                         <a href="?controlador=tienda&accion=ver_mas&id_articulos=<?php echo $articulosDes2->id_articulos;?>">
-                            <img class="card-img-top mb-2" src="./administrador/img/<?php echo $articulosDes2->imagen;?>" alt="">
+                            <img class="card-img-top mb-2" src="./administrador/asset/img/<?php echo $articulosDes2->imagen;?>" alt="">
                         </a>
                         <a href="?controlador=tienda&accion=ver_mas&id_articulos=<?php echo $articulosDes2->id_articulos;?>" class="text-dark" title="ver artículo"><?php echo $articulosDes2->nombre_articulo;?></a>
                     </div>
@@ -79,19 +79,19 @@ $sesion = session_id();
                 </div>
                 <div class="row segunda-fila mb-4">
                     <div class="col-md-6">
-                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
+                        <img class="card-img-top mb-2" src="./administrador/asset/img/sala.jpg" alt="">
                         <p>Imagen</p>
                     </div>
                     <div class="col-md-6">
-                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
+                        <img class="card-img-top mb-2" src="./administrador/asset/img/sala.jpg" alt="">
                         <p>Imagen</p>
                     </div>
                     <div class="col-md-6">
-                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
+                        <img class="card-img-top mb-2" src="./administrador/asset/img/sala.jpg" alt="">
                         <p>Imagen</p>
                     </div>
                     <div class="col-md-6">
-                        <img class="card-img-top mb-2" src="./administrador/img/sala.jpg" alt="">
+                        <img class="card-img-top mb-2" src="./administrador/asset/img/sala.jpg" alt="">
                         <p>Imagen</p>
                     </div>
                 </div>     
@@ -105,38 +105,40 @@ $sesion = session_id();
 
 <!-- ********************************* -->
 
-<h1 class="display-4 text-center">Productos destacados</h1>
-<hr class="my-4">
+<div class="productos_destacados centrar_vertical pt-3">
+    <h1 class="text-center text-light">Productos destacados</h1>
+    <hr class="my-4">
+</div>
 
 <!-- ********************************* -->
 
-<div class="contenedor">
+<div class="contenedor pt-3 mb-2">>
     <div class="caja">
-        <img src="./administrador/img/sala.jpg" alt="">
-        <p>Imagen</p>
+        <img src="./administrador/asset/img/sala.jpg" alt="">
+        <p class="text-light" >Imagen</p>
     </div>
     <div class="caja">
-        <img src="./administrador/img/sala.jpg" alt="">
-        <p>Imagen</p>
+        <img src="./administrador/asset/img/sala.jpg" alt="">
+        <p class="text-light" >Imagen</p>
     </div>
     <div class="caja">
-        <img src="./administrador/img/sala.jpg" alt="">
-        <p>Imagen</p>
+        <img src="./administrador/asset/img/sala.jpg" alt="">
+        <p class="text-light" >Imagen</p>
     </div>
     <div class="caja">
-        <img src="./administrador/img/sala.jpg" alt="">
-        <p>Imagen</p>
+        <img src="./administrador/asset/img/sala.jpg" alt="">
+        <p class="text-light" >Imagen</p>
     </div>
     <div class="caja">
-        <img src="./administrador/img/sala.jpg" alt="">
-        <p>Imagen</p>
+        <img src="./administrador/asset/img/sala.jpg" alt="">
+        <p class="text-light" >Imagen</p>
     </div>
     <div class="caja">
-        <img src="./administrador/img/sala.jpg" alt="">
-        <p>Imagen</p>
+        <img src="./administrador/asset/img/sala.jpg" alt="">
+        <p class="text-light" >Imagen</p>
     </div>
 </div>
-<hr class="my-4">
+<!-- <hr class="my-4"> -->
 <!-- Agregar slider de target  -->
 
 <!-- ********************************* -->
@@ -148,7 +150,7 @@ $sesion = session_id();
     <?php foreach($articulos as $articulos) { ?>
     <div class="col-md-4">
         <div class="card">
-            <img class="card-img-top" src="./administrador/img/<?php echo $articulos->imagen;?>" alt="" style="width: 100%; height: 300px;">
+            <img class="card-img-top" src="./administrador/asset/img/<?php echo $articulos->imagen;?>" alt="" style="width: 100%; height: 300px;">
             <div class="card-body centrado">
                 <h5 class="card-title text-dark text-center " style=""><?php echo $articulos->nombre_articulo;?></h5>
                 <h6 class="card-title text-success text-center">$<?php echo number_format($articulos->precio_venta, 2);?></h6>
@@ -202,7 +204,7 @@ $sesion = session_id();
     <?php foreach($articulosDes as $articulosDes) { ?>
     <div class="col-md-6 mb-3">
         <div class="card">
-            <img class="card-img-top" src="./administrador/img/<?php echo $articulosDes->imagen;?>" alt="" style="height: 444px;">
+            <img class="card-img-top" src="./administrador/asset/img/<?php echo $articulosDes->imagen;?>" alt="" style="height: 444px;">
             <div class="card-body">
                 <h5 class="card-title text-dark text-center"><?php echo $articulosDes->nombre_articulo;?></h5>
                 <h6 class="card-title text-success text-center"">$<?php echo number_format($articulosDes->precio_venta, 2);;?></h6>
@@ -214,10 +216,9 @@ $sesion = session_id();
                     </div>
                     <div>
                         <form action="" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="id_articulos" value="<?php echo $articulosDes->id_articulos ?>">
-                            <button type="submit" name="agregar_carrito2" id="" class="btn btn-danger centrado">
+                            <a name="agregar_carrito1" id="<?php echo $articulosDes->id_articulos ?>" class="btn btn-danger agregar_carrito1">
                                 <i class="bi bi-plus"></i>
-                            </button>
+                            </a>
                         </form>
                     </div>
                 </div>
@@ -237,18 +238,19 @@ $sesion = session_id();
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">¡En hora buena!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                Se ha agregado el producto al carrito exitosamente
+            <div class="modal-body centrar_vertical">
+                
             </div>
             <div class="modal-footer">
                 <a href="?controlador=carrito&accion=vercarrito" class="btn btn-primary">Ver Carrito</a>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir viendo</button>
+                <button type="button" class="btn btn-info" data-bs-dismiss="modal">Seguir viendo</button>
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- ********************************* -->
 

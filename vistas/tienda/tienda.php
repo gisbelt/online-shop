@@ -13,10 +13,14 @@
         <?php foreach($articulos as $art) { ?>
         <div class="row fila_tienda centrar_vertical">
             <div class="col-md-3 ">
-                <img class="card-img-top" src="./administrador/img/<?php echo $art->imagen;?>" alt="" style="width:100%;" alt="Card image cap">
+              <a href="?controlador=tienda&accion=ver_mas&id_articulos=<?php echo $art->id_articulos;?>" class="text-decoration-none">
+                  <img class="card-img-top" src="./administrador/asset/img/<?php echo $art->imagen;?>" alt="" style="width:100%;" alt="Card image cap">
+              </a>
             </div>
             <div class="col-md-6">
-                <h4 class="card-title text-danger"><?php echo $art->nombre_articulo;?></h4>
+                <a href="?controlador=tienda&accion=ver_mas&id_articulos=<?php echo $art->id_articulos;?>" class="text-decoration-none">
+                  <h4 class="card-title text-danger"><?php echo $art->nombre_articulo;?></h4>
+                </a>
                 <p class="card-text"><?php echo $art->descripcion;?></p>
                 <label for=""><strong>Categoría: </strong></label>
                 <p class="card-text"><?php echo $art->categoria;?></p>

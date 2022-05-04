@@ -9,7 +9,7 @@ session_start();
 <div class="container fila_tienda centrar_vertical p-3" id="articulo<?php echo $car->id_articulos ?>"">
         
     <div class="col-md-3 ">
-        <img class="card-img-top" src="./administrador/img/<?php echo $car->imagen; ?>" alt="" style="width:70%;" alt="Card image cap">
+        <img class="card-img-top" src="./administrador/asset/img/<?php echo $car->imagen; ?>" alt="" style="width:70%;" alt="Card image cap">
     </div>    
     <div class="col-md-6">
         <h4 class="card-title text-danger"><?php echo $car->nombre_articulo; ?></h4>
