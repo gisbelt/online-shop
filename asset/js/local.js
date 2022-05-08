@@ -31,13 +31,14 @@ $(document).ready(function(){
     cargar_carrito = function(){
         // recuperamos el conteo
         var conteoCarrito = $('.conteoCarrito');
-        var conteo = $('.conteo').val();
+        var conteo = localStorage.getItem("contadorCarrito");
+        // var conteo = $('#contadorCarrito').val();
         // Reiniciar el conteo
         $(".conteoCarrito").empty(); 
         
-        var conteo = "<span>"+conteo+"</span>";
-        conteoCarrito.append(conteo);
-        $('.conteo').val() + 1; //AQUI
+        var conteos = "<span>"+conteo+"</span>";
+        conteoCarrito.append(conteos);
+        // $('.conteo').val() + 1; //AQUI
     };
 
     // Agregar elemento al carrito sin actualizar página 
@@ -56,6 +57,18 @@ $(document).ready(function(){
             success: function(data){
                 setTimeout(function(){ $(".modal-body").html('Ya tu producto está en el carrito :)'); }, 1000);
                 $(".carrito_agregado").modal("show");
+                // cargar_carrito(); //ERROR
+            },
+            error: function(){} 
+        });
+
+        var ajax = $.ajax({
+            url: "?controlador=paginas&accion=conteo_carrito",
+            type: "POST",
+            data: {},
+            dataType: 'text',
+            success: function(data){
+                console.log(data);
                 cargar_carrito(); //ERROR
             },
             error: function(){} 

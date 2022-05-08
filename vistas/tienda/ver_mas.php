@@ -10,7 +10,7 @@ session_start();
         <img class="card-img-top" src="./administrador/asset/img/<?php echo $art_porid->imagen; ?>" alt="" style="" alt="Card image cap">
     </div>
     <div class="col-md-3 pt-5">
-        <h4 class="card-title text-danger"><?php echo $art_porid->nombre_articulo; ?></h4>
+        <h4 class="card-title text-dark"><?php echo $art_porid->nombre_articulo; ?></h4>
         <hr class="my-2">
         <label for=""><strong>Información del producto: </strong></label>
         <p class="card-text"><?php echo $art_porid->descripcion;?></p>
@@ -18,7 +18,7 @@ session_start();
         <input type="number" name="" id="cantidad" value="1">
     </div>
     <div class="col-md-4 p-5">
-        <h4 class="card-title text-secondary">Solo quedan <?php echo $art_porid->cantidad;?> unidades en stock</h4>
+        <small class="text-secondary">Solo quedan <?php echo $art_porid->cantidad;?> unidades en stock</small>
         <hr class="my-3">
         <h4 class="card-title text-success m-2" id="">$<?php echo $art_porid->precio_venta; ?></h4>
         <form method="POST" class="m-2">

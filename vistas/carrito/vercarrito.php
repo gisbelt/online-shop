@@ -16,13 +16,27 @@ session_start();
         <p class="card-text"><?php echo $car->descripcion;?></p>
         <label for=""><strong>Categoría: </strong></label>
         <p class="card-text"><?php echo $car->categoria;?></p>
-        <label for=""><strong>Cantidad: </strong></label>
-        <input type="number" name="" id="cantidad" value="1">
+        <label for=""><strong>Cantidad: </strong></label><br>
+        <table class="table table-responsive table-bordered d-flex">
+            <tbody class="">
+                <tr class="">
+                    <td class="p-0">
+                        <button type="button" class="btn btn-dark "><i class="bi bi-dash"></i></button>
+                    </td>
+                    <td class="p-0">
+                        <button type="button" class="btn btn-light">1</button> 
+                    </td>
+                    <td class="p-0">
+                        <button type="button" class="btn btn-dark "><i class="bi bi-plus"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>    
     <div class="col-md-3">
         <h4 class="card-title text-success derecha m-2" id="precio_venta">$<?php echo $car->precio_venta;?></h4>
         <form method="POST" class="derecha m-2">
-            <a name="quitar_carrito" id="<?php echo $car->id_articulos ?>" class="btn btn-secondary quitar_carrito" ><i class="bi bi-x-circle"></i> Eliminar</a>
+            <a name="quitar_carrito" id="<?php echo $car->id_articulos ?>" class="btn btn-secondary quitar_carrito" ><i class="bi bi-trash"></i> Eliminar</a>
         </form>  
     </div> 
 

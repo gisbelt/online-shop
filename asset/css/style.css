@@ -1,8 +1,22 @@
+/* general  */
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hidden{
+    display: none;
+}
 .default{
     color: #fff !important;
     font-family: Montserrat,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 
+/* inicio  */
 .slide{
     position: absolute !important; 
     width: 100% !important;
@@ -21,6 +35,10 @@
     background: -webkit-linear-gradient(to right, #F15F79, #f3969a);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #F15F79, #f3969a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+.inicio-card{
+    border: 0 !important;
+}
+/* inicio  */
 
 /*TIENDA Y CARRITO*/
 .centrar_vertical{
@@ -44,9 +62,10 @@
     /* border: 1px solid #dbdbdb; */
     
 }
-/* .card{
-    border: 1px !important;
-} */
+.imagen-tienda-card{
+    width: 100% !important;
+    height: 146px !important;
+}
 .derecha{
     display: flex;
     align-items: flex-end;
@@ -61,6 +80,7 @@
     box-shadow: 0 0 0 0.25rem rgb(243 150 154 / 25%) !important;
 }
 /* Registro  */
+
 
 /* Ofertas  */
 .ofertas1{
@@ -154,4 +174,22 @@
     opacity: 0;
 }
 }
-   
+
+
+/* Loader */
+#loader{
+    border: 1.6rem solid white;
+    border-radius: 50%; /* Circle */
+    border-top: 1.6rem solid #56a5eb;
+    width: 12rem;
+    height: 12rem;
+    animation: rotate 2s linear infinite;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

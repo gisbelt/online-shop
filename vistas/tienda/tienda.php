@@ -11,25 +11,26 @@
 
     <div class="col-md-10">
         <?php foreach($articulos as $art) { ?>
-        <div class="row fila_tienda centrar_vertical">
+        <div class="row fila_tienda centrar_vertical bg-light">
             <div class="col-md-3 ">
               <a href="?controlador=tienda&accion=ver_mas&id_articulos=<?php echo $art->id_articulos;?>" class="text-decoration-none">
-                  <img class="card-img-top" src="./administrador/asset/img/<?php echo $art->imagen;?>" alt="" style="width:100%;" alt="Card image cap">
+                  <img class="card-img-top imagen-tienda-card" src="./administrador/asset/img/<?php echo $art->imagen;?>" alt="" style="width:100% !important; height: 146px !important" alt="Card image cap">
               </a>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 p-3">
                 <a href="?controlador=tienda&accion=ver_mas&id_articulos=<?php echo $art->id_articulos;?>" class="text-decoration-none">
-                  <h4 class="card-title text-danger"><?php echo $art->nombre_articulo;?></h4>
+                  <h4 class="card-title text-dark"><?php echo $art->nombre_articulo;?></h4>
                 </a>
+                <label for=""><strong>Información: </strong></label>
                 <p class="card-text"><?php echo $art->descripcion;?></p>
                 <label for=""><strong>Categoría: </strong></label>
                 <p class="card-text"><?php echo $art->categoria;?></p>
             </div>
             <div class="col-md-3">
-                <h4 class="card-title text-success">$<?php echo number_format($art->precio_venta, 2);?></h4>
-                <form method="POST" >
+                <h4 class="card-title text-success text-center">$<?php echo number_format($art->precio_venta, 2);?></h4>
+                <form method="POST" class="center">
                     <input type="hidden" name="id_articulos" value="<?php echo $art->id_articulos ?>">
-                    <button type="submit" name="agregar_carrito" class="btn btn-danger" >Añadir al carrito</button>
+                    <a name="" id="" class="btn btn-danger my-3 pl-2" ><i class="bi bi-cart-plus"></i></a>
                 </form>  
             </div>  
         </div>     

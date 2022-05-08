@@ -23,10 +23,6 @@ class controladorPaginas{
 
         $carrito=carrito::obtener_detalles_articulos_carrito();
         
-        $conteo=carrito::obtener_id_articulos_carrito2();
-        $total = $conteo + 1;
-        echo "<input type='hidden' class='conteo' value='$total'>";
-
         // $productoYaEstaEnCarrito=carrito::obtener_id_articulos_carrito();
         include_once("vistas/paginas/inicio.php");
     }
@@ -39,7 +35,6 @@ class controladorPaginas{
 
     public function conteo_carrito(){
         $conteo=carrito::obtener_id_articulos_carrito2();
-        echo "<input type='hidden' class='conteo' value='$conteo'>";
     }
 
     public function error(){

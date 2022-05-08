@@ -148,8 +148,8 @@ $sesion = session_id();
 <div class="row">
     
     <?php foreach($articulos as $articulos) { ?>
-    <div class="col-md-4">
-        <div class="card">
+    <div class="col-md-4 mb-3">
+        <div class="card inicio-card bg-light">
             <img class="card-img-top" src="./administrador/asset/img/<?php echo $articulos->imagen;?>" alt="" style="width: 100%; height: 300px;">
             <div class="card-body centrado">
                 <h5 class="card-title text-dark text-center " style=""><?php echo $articulos->nombre_articulo;?></h5>
@@ -203,7 +203,7 @@ $sesion = session_id();
 <div class="row">
     <?php foreach($articulosDes as $articulosDes) { ?>
     <div class="col-md-6 mb-3">
-        <div class="card">
+        <div class="card inicio-card  bg-light">
             <img class="card-img-top" src="./administrador/asset/img/<?php echo $articulosDes->imagen;?>" alt="" style="height: 444px;">
             <div class="card-body">
                 <h5 class="card-title text-dark text-center"><?php echo $articulosDes->nombre_articulo;?></h5>

@@ -49,13 +49,27 @@ class carrito{
 
     // El mismo método de arriba pero de otra manera 
     public static function obtener_id_articulos_carrito2(){
+        // $conexionBD=BD::crearInstancia();
+        // $id_sesion = $_SESSION['correoCliente'];
+        // $sql=$conexionBD->query("SELECT COUNT(*) as numrows FROM carrito WHERE id_sesion='$id_sesion'");
+        // $sql->execute();
+        // $get_total = $sql->fetch(PDO::FETCH_ASSOC); 
+        // $row = $get_total['numrows'];
+        // return $row;
+
         $conexionBD=BD::crearInstancia();
         $id_sesion = $_SESSION['correoCliente'];
         $sql=$conexionBD->query("SELECT COUNT(*) as numrows FROM carrito WHERE id_sesion='$id_sesion'");
         $sql->execute();
-        $get_total = $sql->fetch(PDO::FETCH_ASSOC); 
-        $row = $get_total['numrows'];
-        return $row;
+        $row = $sql->fetch(PDO::FETCH_ASSOC);
+        if($row["numrows"] > 0){
+            $result = $row["numrows"];
+            echo 
+        "<script>
+        localStorage.setItem('contadorCarrito', $result);
+        </script>";
+        }
+        return $result;
     }
 
     // Ver detalles del carrito de compras
