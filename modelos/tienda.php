@@ -15,9 +15,6 @@ class tienda{
     public $estado;
     public $descuento;
     
-    // Creamos un constructor que nos va a ayudar a recibir informacion 
-    // Y que la consulta se cree a partir de objetos
-    // Creará lista de objetos para poder leer la informacion 
     public function  __construct($categoria,$id_articulos,$nombre_articulo,$codigo_articulo,$descripcion,$precio_venta,$imagen,$cantidad,$estado,$descuento){
         // $this->id_categoria=$id_categoria;
         $this->categoria=$categoria;
@@ -84,7 +81,6 @@ class tienda{
         if ($num_total_rows > 0) {
             $pages = ceil($get_total[0]/$item_per_page);
         }
-
         return $pages;
     }
 
@@ -102,7 +98,7 @@ class tienda{
             LIMIT '.$offset.', '.$item_per_page"); 
         if ($sql->num_rows > 0) {
             foreach ($sql->fetch_lazy() as $row) {
-                $html .= '<div class="row fila_tienda centrar_vertical">';
+                $html .= '<div class="row fila_tienda center">';
                 $html .= '<div class="col-md-3 ">
                             <img class="card-img-top" src="./administrador/img/'.$row['imagen'].'" alt="" style="width:100%;" alt="Card image cap">
                          </div>';

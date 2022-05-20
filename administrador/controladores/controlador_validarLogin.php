@@ -1,8 +1,5 @@
 <!-- Bloquemos la cabecera del admin para que no todo el mundo pueda entrar -->
 <?php
-// Conexion BD 
-// session_start();
-
 class controladorValidarLogin{
 
   public function inicio(){
@@ -22,6 +19,4 @@ class controladorValidarLogin{
 
   }
 }
-
-//ctrlMain
 ?>

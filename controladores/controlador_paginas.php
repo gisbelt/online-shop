@@ -11,7 +11,6 @@ class controladorPaginas{
         if($_SESSION['correo_cliente']=='ok'){
             $nombreUsuario=$_SESSION['nombreUsuario'];
         }
-        
         //Buscar todos los artículos
         $articulos=inicio::consultarArticulos();
         //Buscar todos los artículos con 20% de descuento
@@ -34,7 +33,7 @@ class controladorPaginas{
     }
 
     public function conteo_carrito(){
-        $conteo=carrito::obtener_id_articulos_carrito2();
+        // $conteo=carrito::obtener_id_articulos_carrito2();
     }
 
     public function error(){

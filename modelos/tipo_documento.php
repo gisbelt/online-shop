@@ -11,12 +11,9 @@ class tipoDocumento{
     }
 
     public static function consultarTipoDocumento(){
-        //Arreglo para almacenar todos los empleados que vamos a recuperar de la base de datos
         $listaTipoDocumento=[]; 
         $conexionBD=BD::crearInstancia();
         $sql=$conexionBD->query("SELECT * FROM tipo_documento");
-        // recuperar la información para almacenarla en la lista 
-        // fetchAll va a tener todos los registros y lo vamos a recibir como si fuera uno 
         foreach($sql->fetchAll() as $tipo_documento){
             $listaTipoDocumento[]=new tipoDocumento($tipo_documento['id_tipo_documento'],$tipo_documento['tipo_documento']);
         }

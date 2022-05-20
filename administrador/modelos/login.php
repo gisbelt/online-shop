@@ -11,13 +11,12 @@ class Login{
     public $direccion;  
     public $contrasenia;
     
-    public static function consultar($correo){
-        //Error aquí
+    public static function acceso($correo){
         $conexionBD=BD::crearInstancia();
         $sql= $conexionBD->prepare("SELECT correo,contrasenia,nombre FROM administrador WHERE correo=?"); 
         $sql->execute(array($correo));
-        $consultarAdmin=$sql->fetch();
-        return new Login($consultarAdmin['correo'],$consultarAdmin['contrasenia'],$consultarAdmin['nombre']);         
+        $consultarAdmin=$sql->fetch(PDO::FETCH_LAZY);
+        return $consultarAdmin;
     }
 
 

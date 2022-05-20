@@ -14,6 +14,7 @@ class controladorAdmin {
             // sino, si ese usuario tiene un valor, imprime esa información
             if($_SESSION['correo']=='ok'){
                 $nombreAdmin=$_SESSION['nombreAdmin'];
+                $date=$_SESSION['ip'];
             }
         }
         include_once("vistas/administrador/inicio.php");

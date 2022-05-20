@@ -14,9 +14,9 @@ $(document).ready(function(){
             url: "?controlador=carrito&accion=quitarcarrito",
             type: 'POST',
             data: dataString,
-            // Para obtener la respuesta 
             success: function(data){
                 $("#articulo" + id).remove();
+                $('.fila_tienda').css("margin-bottom","0px");
             },
             // para capturar el error 
             error: function(data, status, error){
@@ -62,14 +62,13 @@ $(document).ready(function(){
             error: function(){} 
         });
 
-        var ajax = $.ajax({
-            url: "?controlador=paginas&accion=conteo_carrito",
+        var ajax2 = $.ajax({
+            url: "results.php",
             type: "POST",
-            data: {},
-            dataType: 'text',
-            success: function(data){
-                console.log(data);
-                cargar_carrito(); //ERROR
+            dataType: 'json',
+            success: function(res){
+                console.log(res);
+                // cargar_carrito(); //ERROR
             },
             error: function(){} 
         });
@@ -160,7 +159,7 @@ $(document).ready(function(){
         }
         else{
             var ajax = $.ajax({
-                url: "?controlador=clientes&accion=crear",
+                url: "results.php",
                 type: 'POST',
                 data:{
                     'nombre_cliente':nombre_cliente,
@@ -168,22 +167,20 @@ $(document).ready(function(){
                     'correo_cliente':correo_cliente,
                     'contrasenia':contrasenia
                 },
-                // dataType: 'text',
-                // Para obtener la respuesta 
+                dataType: 'json',
                 success: function(data){  
-                    // AQUI 
-                    // var dato = JSON.parse(JSON.stringify(data);
-                    exito(data);
-                    // console.log(dato);                                     
-                    // if (data[0].msj === "0"){
-                    //     $('.alert').show();
-                    //     $('.alert').html("El correo ya existe");
-                    //     $("#formulario_registro")[0].reset();
-                    // }else if(data[0].msj === "1"){
-                    //     $(".cliente_registrado").modal("show");
-                    //     $("#formulario_registro")[0].reset();
-                    //     $('.alert').hide();
-                    // }
+                    if (data.msj === "0"){
+                        $('html, body').animate({
+                            scrollTop: $("#alert").offset().top
+                        }, 900);
+                        $('.alert').show();
+                        $('.alert').html("El correo ya existe");
+                        $("#formulario_registro")[0].reset();
+                    }else if(data.msj === "1"){
+                        $(".cliente_registrado").modal("show");
+                        $("#formulario_registro")[0].reset();
+                        $('.alert').hide();
+                    }
                 },
                 // para capturar el error 
                 error: function(data, status, error){
@@ -194,18 +191,6 @@ $(document).ready(function(){
          }
     })
 
-    exito = function(data){
-        if (data.msj === "0"){
-            $('.alert').show();
-            $('.alert').html("El correo ya existe");
-            $("#formulario_registro")[0].reset();
-        }else if(data.msj === "1"){
-            $(".cliente_registrado").modal("show");
-            $("#formulario_registro")[0].reset();
-            $('.alert').hide();
-        }
-    };
-
     $(".close-registro").on('click',function(){
         $("#nombre_cliente").focus();
     })
@@ -213,7 +198,17 @@ $(document).ready(function(){
         $("#contrasenia").focus();
     })
 
-
+    // Validar campo email 
+    $('#correo_cliente').on('keyup', function() {
+        var re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test(this.value);
+        if(!re) {
+            $('.alert').show();
+            $('.alert').html("Ingresa una dirección válida");
+        } else {
+            $('.alert').hide();
+        }
+    })
+    
     // ************************************************ 
 
     //Paginación tienda.php 

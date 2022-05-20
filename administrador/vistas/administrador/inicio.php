@@ -2,7 +2,7 @@
 
     <div class="jumbotron">
         <br><br>
-        <h1 class="display-3">Bienvenido <?php echo $nombreAdmin; ?></h1>
+        <h1 class="display-3">Bienvenido <?php echo $nombreAdmin; echo $date; ?></h1>
         <p class="lead">Vamos a administrar nuestros artículos en el sitio web</p>
         <hr class="my-2">
         <p class="lead">

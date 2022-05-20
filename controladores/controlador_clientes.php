@@ -19,11 +19,14 @@ class controladorClientes{
                 $mensaje1="Por favor debe ingresar los datos";
             }
             else{ 
+                //ejecutamos
                 $consultarCliente=clientes::login($correo); 
                 if($consultarCliente['contrasenia']==$contrasenia && $consultarCliente['correo_cliente']==$correo){
                     $_SESSION['correo_cliente'] = "ok";
                     $_SESSION['correoCliente']=$consultarCliente->correo_cliente;
                     $_SESSION['nombreCliente']=$consultarCliente->nombre_cliente;
+                    $_SESSION['date']=date('d_m_Y_H_i');
+                    $_SESSION['ip']=$_SERVER['REMOTE_ADDR'];
                     header("location:?controlador=paginas&accion=inicio");  
                 }else{
                     $mensaje2="Error, el correo o contraseña son incorrectos";
@@ -40,25 +43,12 @@ class controladorClientes{
     }
 
     public function registrarse(){
-        // if($_POST){
-        //     $nombre_cliente=$_POST['nombre_cliente'];
-        //     $apellido_cliente=$_POST['apellido_cliente'];
-        //     $correo_cliente=$_POST['correo_cliente'];
-        //     $contrasenia=$_POST['contrasenia'];
-        //     clientes::crear($nombre_cliente,$apellido_cliente,$correo_cliente,$contrasenia);       
-        // }
-        include_once("vistas/clientes/crear.php");
-    }
-
-    public function crear(){
-        if($_POST){
-            $nombre_cliente=$_POST['nombre_cliente'];
-            $apellido_cliente=$_POST['apellido_cliente'];
-            $correo_cliente=$_POST['correo_cliente'];
-            $contrasenia=$_POST['contrasenia'];
-            clientes::crear($nombre_cliente,$apellido_cliente,$correo_cliente,$contrasenia);       
+        if(isset($_SESSION['correoCliente'])){
+            header("Location:?controlador=paginas&accion=inicio");
         }
-        // include_once("vistas/clientes/crear.php");
+        else{
+            include_once("vistas/clientes/crear.php");
+        }
     }
 
     public function editar(){

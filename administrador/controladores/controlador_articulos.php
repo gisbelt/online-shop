@@ -15,6 +15,8 @@ class controladorArticulos {
     }
 
     public function crearArticulos(){
+        validarLogin::validar();
+
         //Buscar categorias
         $categoria=categorias::consultarCategoria();
         
@@ -60,8 +62,9 @@ class controladorArticulos {
         include_once("vistas/articulos/consultarArticulos.php");
     }
 
-    public function editarArticulos(){           
-        // Editar artículos  
+    public function editarArticulos(){  
+        validarLogin::validar();
+                 
         if($_POST){
             $id_articulos=$_GET['id_articulos'];
             $codigo_articulo=$_POST['ecodigo_articulo'];
@@ -113,7 +116,6 @@ class controladorArticulos {
     }
 
     public function borrar(){
-
         // Buscarmos la imagen en BD y la borramos de la carpeta
         $id_articulos=$_GET['id_articulos'];
         $conexionBD=BD::crearInstancia();

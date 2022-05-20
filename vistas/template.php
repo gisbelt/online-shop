@@ -9,7 +9,6 @@ include_once("modelos/carrito.php");
 $conteo = count(carrito::obtener_id_articulos_carrito());   
 
 ?>
-<!-- bs5-$ para que arme toda la extructura html con bootstrap -->
 <!doctype html>
 <html lang="en">
   <head>

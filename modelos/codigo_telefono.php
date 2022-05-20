@@ -1,5 +1,4 @@
 <?php
-// session_start();
 class codigoTelefono{
 
     public $id_codigo_telefono;

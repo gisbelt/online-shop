@@ -1,4 +1,9 @@
 /* general  */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 .column{
     display: flex;
     flex-direction: column;
@@ -7,6 +12,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.center2{ 
+    display: block !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+.derecha{
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
 }
 .hidden{
     display: none;
@@ -35,41 +50,26 @@
     background: -webkit-linear-gradient(to right, #F15F79, #f3969a);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #F15F79, #f3969a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.inicio-card{
+.card_inicio{
     border: 0 !important;
-}
-/* inicio  */
-
-/*TIENDA Y CARRITO*/
-.centrar_vertical{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.centrado{ 
-    display: block !important;
-    margin-right: auto;
-    margin-left: auto;
 }
 .caja_btn_ver{
     margin-right: 5px;
 }
+/* inicio  */
+
+/*TIENDA Y CARRITO*/
 .fila_tienda{
     /* height:10%;  */
     border-radius: 17px 17px 17px 17px;
     -moz-border-radius: 17px 17px 17px 17px;
     -webkit-border-radius: 17px 17px 17px 17px;
     /* border: 1px solid #dbdbdb; */
-    
+    margin-bottom: 5px;
 }
-.imagen-tienda-card{
+.img_tienda_card{
     width: 100% !important;
     height: 146px !important;
-}
-.derecha{
-    display: flex;
-    align-items: flex-end;
-    justify-content: end;
 }
 /*TIENDA Y CARRITO*/
 
@@ -82,37 +82,37 @@
 /* Registro  */
 
 
-/* Ofertas  */
+/* Ofertas 1 */
 .ofertas1{
     padding: 0px 24px;
     position: relative;
     margin-top: 220px;
 }
-.item-principal{
+.item_principal{
     padding: 0px 10px;
 }
-.item-principal .fondo{
+.item_principal .fondo{
     padding: 20px 0px 15px 0px;
 }
-.item-principal .fondo .texto{
+.item_principal .fondo .texto{
     padding: 0px 20px;
 }
-.item-principal .fondo .segunda-fila{
+.item_principal .fondo .segunda_fila{
     padding: 0px 20px;
 }
-.item-principal .fondo .segunda-fila img{
+.item_principal .fondo .segunda_fila img{
     height: 80% !important;
 }
-/* Ofertas  */
+/* Ofertas 1 */
 
 
-/* productos destacados  */
-.productos_destacados{
+/* widget1  */
+.widget1{
     background: #6cc3d5;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #6cc3d5, #65C7F7, #6cc3d5);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #6cc3d5, #65C7F7, #6cc3d5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-/* productos destacados  */
+/* widget1  */
 
 
 /* CSS Para agregar cajas sin bootstrap, con flex, tipo: col-md-4*/

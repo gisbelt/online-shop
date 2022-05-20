@@ -13,10 +13,6 @@ class clientes{
     public $telefono;
     public $contrasenia;
 
-   
-    // Creamos un constructor que nos va a ayudar a recibir informacion 
-    // Y que la consulta se cree a partir de objetos
-    // Creará lista de objetos para poder leer la informacion 
     public function  __construct($id_cliente,$nombre_cliente,$apellido_cliente,$correo_cliente,$id_tipo_documento,$documento,$direccion,$id_codigo_telefono,$telefono,$contrasenia){
         $this->id_cliente=$id_cliente;
         $this->nombre_cliente=$nombre_cliente;
@@ -50,17 +46,16 @@ class clientes{
 
     // Crear/Registrar Clientes
     public static function crear($nombre_cliente,$apellido_cliente,$correo_cliente,$contrasenia){
-        // Validamos que no haya en mismo correo 
+        // Validamos que no haya el mismo correo 
         $conexionBD=BD::crearInstancia();
         $sql=$conexionBD->prepare("SELECT COUNT(*) as numrows FROM clientes WHERE correo_cliente = ?");
         $sql->execute(array($correo_cliente));
         $row = $sql->fetch(PDO::FETCH_ASSOC);
         if($row["numrows"] > 0){
-            $result = ["msj" => "0"];
+            $result = [msj => "0"];
             echo json_encode($result);
             die();
         }
-        // AQUI 
         else {
             $sql2= $conexionBD->prepare("INSERT INTO clientes (nombre_cliente, apellido_cliente, correo_cliente, contrasenia, id_tipo_documento, id_codigo_telefono) VALUES (:nombre_cliente,:apellido_cliente,:correo_cliente,:contrasenia, '1', '1')");
             $sql2->bindParam(":nombre_cliente", $nombre_cliente);
@@ -68,10 +63,9 @@ class clientes{
             $sql2->bindParam(":correo_cliente", $correo_cliente);
             $sql2->bindParam(":contrasenia", $contrasenia);
             $sql2->execute();
-            $result = ["msj" => "1"];
+            $result = [msj => "1"];
             echo json_encode($result);
         }
-        // return $result;
     }
 
     public static function borrar($id){

@@ -31,7 +31,7 @@ session_start();
 
 <!-- ********************************* -->
 
-<div class="productos_destacados centrar_vertical pt-2">
+<div class="productos_destacados center pt-2">
     <h5 class="text-center text-light mt-4">¿Qué otros productos compran los clientes?</h5>
     <hr class="my-4">
 </div>

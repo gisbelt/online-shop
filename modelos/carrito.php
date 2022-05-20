@@ -2,9 +2,6 @@
 // Interaccion con la base de datos 
 class carrito{
 
-    // Para que funcione la vista, quizas es necesario agregar toda las variables
-    // como parametros al constructor 
-
     public $id_articulos;
     public $id_sesion;
 
@@ -64,10 +61,7 @@ class carrito{
         $row = $sql->fetch(PDO::FETCH_ASSOC);
         if($row["numrows"] > 0){
             $result = $row["numrows"];
-            echo 
-        "<script>
-        localStorage.setItem('contadorCarrito', $result);
-        </script>";
+            echo json_encode($result);
         }
         return $result;
     }

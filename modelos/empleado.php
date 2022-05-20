@@ -6,9 +6,6 @@ class empleado{
     public $nombre;
     public $correo;
     
-    // Creamos un constructor que nos va a ayudar a recibir informacion 
-    // Y que la consulta se cree a partir de objetos
-    // Creará lista de objetos para poder leer la informacion 
     public function  __construct($id,$nombre,$correo){
         $this->id=$id;
         $this->nombre=$nombre;
@@ -51,7 +48,6 @@ class empleado{
         return new empleado($empleados['id'],$empleados['nombre'],$empleados['correo']);
 
     }
-  
 
     public static function editar($id,$nombre,$correo){
         $conexionBD=BD::crearInstancia();

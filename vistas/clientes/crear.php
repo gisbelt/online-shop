@@ -11,7 +11,7 @@
                 </div>
             <?php // }?>
 
-            <form action="" method="post" id="formulario_registro">
+            <form action="formulario_registro" method="post" id="formulario_registro">
                 <p>Los elementos con el <span class="text-secondary">*</span> son obligatorios</p>
                 <!-- bs5-form-input   -->
                 <div class="mb-3">

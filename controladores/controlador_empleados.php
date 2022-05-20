@@ -2,21 +2,17 @@
 
 include_once("modelos/empleado.php");
 include_once("./modelos/conexion.php");
-// Instancia (la clase BD llamando al método crearInstancia)
 BD::crearInstancia();
 
 class controladorEmpleados{
     // metodos
     public function inicio(){
-        // El acceso a estos datos, los vamos a obtener a través de la vista en 
-        // vista/empleado/inicio
         $empleados=empleado::consultar();
 
         include_once("vistas/empleados/inicio.php");
     }
 
     public function crear(){
-        // Recepcionamos los datos por medio de post
         if($_POST){
             print_r($_POST);
             $nombre=$_POST['name'];
@@ -29,7 +25,6 @@ class controladorEmpleados{
     }
 
     public function editar(){
-        // Identificar si hay un envío post, para poder modificar
         if($_POST){
             $id=$_POST['id'];
             $nombre=$_POST['name'];

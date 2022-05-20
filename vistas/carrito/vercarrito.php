@@ -6,9 +6,9 @@ session_start();
 <div class="alert alert-success" style="display:none;"></div>
     
 <?php foreach($carrito as $car) { ?>
-<div class="container fila_tienda centrar_vertical p-3" id="articulo<?php echo $car->id_articulos ?>"">
+<div class="container fila_tienda center p-3" id="articulo<?php echo $car->id_articulos ?>"">
         
-    <div class="col-md-3 ">
+    <div class="col-md-3">
         <img class="card-img-top" src="./administrador/asset/img/<?php echo $car->imagen; ?>" alt="" style="width:70%;" alt="Card image cap">
     </div>    
     <div class="col-md-6">
@@ -18,6 +18,7 @@ session_start();
         <p class="card-text"><?php echo $car->categoria;?></p>
         <label for=""><strong>Cantidad: </strong></label><br>
         <table class="table table-responsive table-bordered d-flex">
+            <!-- acomodar cantidad  -->
             <tbody class="">
                 <tr class="">
                     <td class="p-0">
@@ -41,7 +42,6 @@ session_start();
     </div> 
 
 </div>      
-<br>
 <?php } ?>
 <!-- Realizar pedido  -->
 <div class="container derecha">

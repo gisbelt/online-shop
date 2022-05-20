@@ -5,7 +5,7 @@ class controladorLogout {
         //error aquí continuar con carrito
         session_start(); 
         session_destroy();
-        header("location:?controlador=admin&accion=inicio"); //Revisar
+        header("location:?controlador=login&accion=login");
     }
     
 }

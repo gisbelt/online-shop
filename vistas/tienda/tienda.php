@@ -11,10 +11,10 @@
 
     <div class="col-md-10">
         <?php foreach($articulos as $art) { ?>
-        <div class="row fila_tienda centrar_vertical bg-light">
+        <div class="row fila_tienda center bg-light">
             <div class="col-md-3 ">
               <a href="?controlador=tienda&accion=ver_mas&id_articulos=<?php echo $art->id_articulos;?>" class="text-decoration-none">
-                  <img class="card-img-top imagen-tienda-card" src="./administrador/asset/img/<?php echo $art->imagen;?>" alt="" style="width:100% !important; height: 146px !important" alt="Card image cap">
+                  <img class="card-img-top img_tienda_card" src="./administrador/asset/img/<?php echo $art->imagen;?>" alt="" style="width:100% !important; height: 146px !important" alt="Card image cap">
               </a>
             </div>
             <div class="col-md-6 p-3">
@@ -30,8 +30,8 @@
                 <h4 class="card-title text-success text-center">$<?php echo number_format($art->precio_venta, 2);?></h4>
                 <form method="POST" class="center">
                     <input type="hidden" name="id_articulos" value="<?php echo $art->id_articulos ?>">
-                    <a name="" id="" class="btn btn-danger my-3 pl-2" ><i class="bi bi-cart-plus"></i></a>
-                </form>  
+                    <a name="agregar_carrito1" id="<?php echo $art->id_articulos ?>" class="btn btn-danger my-3 pl-2 agregar_carrito1" ><i class="bi bi-cart-plus text-light"></i></a>
+                  </form>  
             </div>  
         </div>     
         <br>
@@ -76,6 +76,31 @@
     </div>
 </div>
 </div>
+
+
+<!-- ********************************* -->
+
+<!-- Modal para mostrar mensaje de éxito al agregar un carrito  -->
+<div class="carrito_agregado modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">¡En hora buena!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body center">
+                
+            </div>
+            <div class="modal-footer">
+                <a href="?controlador=carrito&accion=vercarrito" class="btn btn-primary">Ver Carrito</a>
+                <button type="button" class="btn btn-info" data-bs-dismiss="modal">Seguir viendo</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ********************************* -->
 <!-- 
 float-left; alinea a la izquierda
 float-right: alinea a la derecha
