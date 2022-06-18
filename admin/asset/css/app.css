@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.center2{ 
+    display: block !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+.space-between{
+    display: flex;
+    justify-content: space-between;
+}
+.derecha{
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+}
+.hidden{
+    display: none;
+}
+.absolute{
+    position: absolute;
+}
+.relative{
+    position: relative;
+}
+.default{
+    color: #fff !important;
+    font-family: Montserrat,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+
+/* ventas  */
+.input_venta{
+    position: relative;
+}
+.input_venta_icon{
+    position: absolute;
+	left: 86%;
+	top: 13%;
+	transform: translateY(-35%);
+}
+.nombre_articulo{
+    width: 100px !important;
+    white-space:nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+/* ventas */

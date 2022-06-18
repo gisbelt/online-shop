@@ -1,0 +1,263 @@
+/* general  */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f3969a;
+}
+::-webkit-scrollbar-thumb{
+    background: #d3d3d3;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #acacac;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.center2{ 
+    display: block !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+.space-between{
+    display: flex;
+    justify-content: space-between;
+}
+.derecha{
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+}
+.izquierda{
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+}
+.hidden{
+    display: none;
+}
+.pointer{
+    cursor: pointer;
+}
+.absolute{
+    position: absolute;
+}
+.relative{
+    position: relative;
+}
+.default{
+    color: #fff !important;
+    font-family: Montserrat,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+/* home  */
+.slide{
+    position: absolute !important; 
+    width: 100% !important;
+}
+.fondos{
+    /* Fondo 1  */
+    background: #f3969a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffc3a0, #f3969a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffc3a0, #f3969a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* Fondo 2  */
+    background: #6cc3d5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #6cc3d5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0052D4, #65C7F7, #6cc3d5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* Fondo 3  */
+    background: #f3969a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F15F79, #f3969a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F15F79, #f3969a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.card_inicio{
+    border: 0 !important;
+}
+.caja_btn_ver{
+    margin-right: 5px;
+}
+/* home  */
+
+/*TIENDA Y CARRITO*/
+.fila_tienda{
+    /* height:10%;  */
+    border-radius: 17px 17px 17px 17px;
+    -moz-border-radius: 17px 17px 17px 17px;
+    -webkit-border-radius: 17px 17px 17px 17px;
+    /* border: 1px solid #dbdbdb; */
+    margin-bottom: 5px;
+}
+.fila_carrito1{
+    /* height:10%;  */
+    border-radius: 17px 17px 17px 17px;
+    -moz-border-radius: 17px 17px 17px 17px;
+    -webkit-border-radius: 17px 17px 17px 17px;
+    /* border: 1px solid #dbdbdb; */
+    margin-bottom: 5px;
+}
+.fila_carrito2{
+    margin-left: 5px !important;
+}
+.img_tienda_card{
+    width: 100% !important;
+    height: 146px !important;
+}
+/*TIENDA Y CARRITO*/
+
+
+/* Registro  */
+.error_focus{
+    border-color: #f3969a!important;
+    box-shadow: 0 0 0 0.25rem rgb(243 150 154 / 25%) !important;
+}
+/* Registro  */
+
+
+/* Ofertas 1 */
+.ofertas1{
+    padding: 0px 24px;
+    position: relative;
+    margin-top: 220px;
+}
+.item_principal{
+    padding: 0px 10px;
+}
+.item_principal .fondo{
+    padding: 20px 0px 15px 0px;
+}
+.item_principal .fondo .texto{
+    padding: 0px 20px;
+}
+.item_principal .fondo .segunda_fila{
+    padding: 0px 20px;
+}
+.item_principal .fondo .segunda_fila img{
+    height: 158px !important;
+}
+.item_principal .fondo .segunda_fila img:hover{
+    transform: scale(1.065);
+}
+.titulo_articulo{
+    width: 100px !important;
+    white-space:nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+/* Ofertas 1 */
+
+/* Ofertas 2  */
+.slick-arrow{
+    display: none !important;
+}
+/* Ofertas 2 */
+
+/* widget1  */
+.widget1{
+    background: #6cc3d5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6cc3d5, #65C7F7, #6cc3d5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6cc3d5, #65C7F7, #6cc3d5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+/* widget1  */
+
+
+/* Pedidos  */
+.codigo_telefono{
+    /* width: 5% !important; */
+    z-index: 1;
+}
+.telefono{
+    position: relative;
+}
+/* Pedidos  */
+
+
+/* CSS Para agregar cajas sin bootstrap, con flex, tipo: col-md-4*/
+.contenedor{
+    display: flex;
+    justify-content: space-evenly; 
+    padding: 0px 24px;
+    /* margin: 0px 87.5px; */
+    background: #6cc3d5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6cc3d5, #65C7F7, #6cc3d5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6cc3d5, #65C7F7, #6cc3d5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.caja{
+    width: 20%;
+    padding: 5px;
+    margin: 2px;
+    text-align: center;
+}
+.caja img{
+    width: 100%;
+    height: 230px;   
+}
+/* CSS Para agregar cajas sin bootstrap, con flex, tipo: col-md-4*/
+
+
+/* From uiverse.io by @G4b413l */
+.ping {
+    --uib-size: 50px;
+    --uib-speed: 1s;
+    --uib-color: #3950cf;
+    position: relative;
+    height: var(--uib-size);
+    width: var(--uib-size);
+}   
+.ping::before,
+.ping::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: var(--uib-color);
+    animation: pulse7132 var(--uib-speed) linear infinite;
+    transform: scale(0);
+    opacity: 0;
+}   
+.ping::after {
+    animation-delay: calc(var(--uib-speed) / -2);
+}   
+@keyframes pulse7132 {
+0% {
+    transform: scale(0);
+    opacity: 1;
+}
+
+100% {
+    transform: scale(1);
+    opacity: 0;
+}
+}
+
+
+/* Loader */
+#loader{
+    border: 1.6rem solid white;
+    border-radius: 50%; /* Circle */
+    border-top: 1.6rem solid #56a5eb;
+    width: 12rem;
+    height: 12rem;
+    animation: rotate 2s linear infinite;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
