@@ -1,4 +1,5 @@
-### Proyecto Personal En PHP MVC - Tienda Online Con Carrito de Compras - Casa Carlina, C.A
+## :rocket: Online shop with shopping cart and order management
+### `PHP - COMPOSER - MVC - BOOTSTRAP - RESPONSIVE`
 
 ![TiendaCasaCarlina](https://github.com/gisbelt/casacarlina/blob/main/asset/gif/CasaCarlina.gif)
 
