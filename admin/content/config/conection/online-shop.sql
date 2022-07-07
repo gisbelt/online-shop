@@ -42,7 +42,7 @@ CREATE TABLE `administrador` (
 --
 
 INSERT INTO `administrador` (`id_admin`, `cedula`, `nombre`, `correo`, `telefono`, `direccion`, `contrasenia`) VALUES
-(1, 22188492, 'Gisbel', 'lore@gmail.com', '0424', 'Calle 9 santa isabel', '123');
+(1, 25444859, 'Manuel', 'manuel@gmail.com', '4248859687', 'Calle 8 Av. Puerto Alegre', '123');
 
 -- --------------------------------------------------------
 
@@ -101,8 +101,8 @@ CREATE TABLE `carrito` (
 INSERT INTO `carrito` (`id_sesion`, `id_articulos`) VALUES
 ('eva@gmail.com', 11),
 ('eva@gmail.com', 3),
-('gis@gmail.com', 10),
-('gis@gmail.com', 8);
+('manuel@gmail.com', 10),
+('manuel@gmail.com', 8);
 
 -- --------------------------------------------------------
 
@@ -156,9 +156,9 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `correo_cliente`, `id_tipo_documento`, `documento`, `direccion`, `id_codigo_telefono`, `telefono`, `contrasenia`, `imagen`) VALUES
-(1, 'Gisbel', 'Torres', 'gis@gmail.com', 1, '22188492', '', 1, '5289570', '123', ''),
+(1, 'manuel', 'lopez', 'manuel@gmail.com', 1, '1115558', '', 1, '1547871', '123', ''),
 (53, 'eva', 'longoria', 'eva@gmail.com', 1, '', '', 1, '', '123', ''),
-(55, 'gipsy', 'torres', 'gip@gmail.com', 1, '', '', 1, '', '123', '');
+(55, 'jose', 'perez', 'gip@gmail.com', 1, '', '', 1, '', '123', '');
 
 -- --------------------------------------------------------
 
